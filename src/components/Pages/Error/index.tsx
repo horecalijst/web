@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const Error = () => (
   <Layout>
     <Meta
-      title="Er ging iets mis!"
+      title="Whoops!"
       extra={<meta name="robots" content="noindex, follow" />}
     />
     <Header />
