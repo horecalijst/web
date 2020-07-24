@@ -2,10 +2,21 @@
   @apply p-10;
 
   .logo {
-    text-decoration: none;
+    @apply no-underline;
+    @apply inline-flex items-center;
+    font-family: 'Roboto Slab', serif;
+    color: #4d4556;
+
+    h1 {
+      @apply text-xl;
+      @apply ml-4;
+      @apply leading-none;
+    }
 
     img {
-      height: 36px;
+      @apply w-8 h-8;
+      @apply rounded-sm;
+      @apply overflow-hidden;
     }
   }
 }
