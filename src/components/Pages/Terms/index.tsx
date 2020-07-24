@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 
 const Terms = () => (
   <Layout>
-    <Meta title="Terms" />
+    <Meta title="Algemene voorwaarden" />
     <Header />
     <Layout.Content>
       <div className={styles.terms}>
