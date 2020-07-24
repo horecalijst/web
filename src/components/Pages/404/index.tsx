@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Layout from 'components/Layout';
 import Meta from 'components/Meta';
@@ -18,6 +19,7 @@ const E404 = () => (
         <p>Deze pagina kon niet worden teruggevonden op dit moment.</p>
       </div>
     </Layout.Content>
+    <Footer />
   </Layout>
 );
 

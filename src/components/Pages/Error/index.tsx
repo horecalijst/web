@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Layout from 'components/Layout';
 import Meta from 'components/Meta';
@@ -18,6 +19,7 @@ const Error = () => (
         <p>Dit is vreemd, het lijkt erop dat er iets grondig fout ging!</p>
       </div>
     </Layout.Content>
+    <Footer />
   </Layout>
 );
 

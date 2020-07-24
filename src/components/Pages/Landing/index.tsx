@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import Form from 'components/Form';
 import Header from 'components/Header';
 import Layout from 'components/Layout';
@@ -56,6 +57,7 @@ const Landing = () => (
         </Form>
       </div>
     </Layout.Content>
+    <Footer />
   </Layout>
 );
 
