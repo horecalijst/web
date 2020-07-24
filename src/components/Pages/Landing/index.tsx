@@ -35,12 +35,7 @@ const Landing = () => (
           </Form.Field>
           <Form.Field>
             <Form.Label htmlFor="business">Zaak</Form.Label>
-            <Form.Input
-              id="business"
-              name="business"
-              type="text"
-              value="Brasserie Keizershof"
-            />
+            <Form.Input id="business" name="business" type="text" />
           </Form.Field>
           <Form.Field>
             <Form.Button type="submit">Opslaan</Form.Button>
