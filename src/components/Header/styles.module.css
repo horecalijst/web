@@ -41,7 +41,7 @@
       @apply items-center;
       @apply m-1;
       @apply no-underline;
-      @apply text-indigo-100;
+      @apply text-white;
       @apply bg-indigo-500;
       @apply transition ease-in-out duration-150;
 

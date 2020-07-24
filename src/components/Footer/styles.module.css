@@ -1,5 +1,5 @@
 .footer {
   @apply py-6 px-8;
-  @apply border-t border-gray-200;
   @apply text-gray-500;
+  @apply border-t border-gray-200;
 }

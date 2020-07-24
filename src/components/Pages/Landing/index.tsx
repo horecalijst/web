@@ -46,7 +46,7 @@ const Landing = () => (
             een veilige manier bijgehouden en zijn enkel toegangkelijk voor de
             zaak die u op gaf.{' '}
             <strong>
-              Na 14 dagen worden deze gegevens automatisch verwijderd.
+              Na 14 dagen worden deze gegevens ook weer automatisch verwijderd.
             </strong>
           </div>
         </Form>
