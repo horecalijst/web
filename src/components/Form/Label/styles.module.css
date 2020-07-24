@@ -1,0 +1,10 @@
+.label {
+  @apply block;
+  @apply text-gray-700;
+  @apply font-semibold;
+  @apply mb-2;
+
+  &.error {
+    @apply text-red-700;
+  }
+}

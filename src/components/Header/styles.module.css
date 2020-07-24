@@ -1,22 +1,46 @@
 .header {
-  @apply p-10;
+  @apply py-6 px-8;
+  @apply flex items-center;
+
+  div {
+    @apply flex-1;
+  }
 
   .logo {
     @apply no-underline;
     @apply inline-flex items-center;
+    @apply text-gray-800;
     font-family: 'Roboto Slab', serif;
-    color: #4d4556;
 
     h1 {
       @apply text-xl;
       @apply ml-4;
-      @apply leading-none;
     }
 
     img {
       @apply w-8 h-8;
       @apply rounded-sm;
       @apply overflow-hidden;
+    }
+  }
+
+  nav {
+    a {
+      @apply cursor-pointer;
+      @apply text-sm font-semibold;
+      @apply py-1;
+      @apply px-3;
+      @apply rounded;
+      @apply inline-flex;
+      @apply items-center;
+      @apply m-1;
+      @apply no-underline;
+      @apply text-purple-100;
+      @apply bg-purple-800;
+
+      &:hover {
+        @apply bg-purple-900;
+      }
     }
   }
 }

@@ -1,0 +1,16 @@
+.input {
+  @apply bg-white;
+  @apply border;
+  @apply appearance-none;
+  @apply rounded;
+  @apply w-full;
+  @apply text-sm font-medium;
+  @apply py-2;
+  @apply px-3;
+  @apply leading-relaxed;
+  @apply transition ease-in-out duration-150;
+
+  &.error {
+    @apply border-red-700;
+  }
+}

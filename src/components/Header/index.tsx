@@ -11,6 +11,12 @@ const Header = () => (
         <h1>Horecalijst</h1>
       </a>
     </Link>
+    <div></div>
+    <nav>
+      <Link href="/">
+        <a>Aanmelden met zaak</a>
+      </Link>
+    </nav>
   </header>
 );
 
