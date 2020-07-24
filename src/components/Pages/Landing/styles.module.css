@@ -32,10 +32,10 @@
   }
 
   .disclaimer {
-    @apply mt-12;
+    @apply mt-10;
     @apply p-4;
     @apply rounded;
-    @apply bg-indigo-100;
+    @apply bg-gray-100;
     @apply text-sm;
 
     strong {
