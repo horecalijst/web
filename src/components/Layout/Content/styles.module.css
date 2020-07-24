@@ -3,4 +3,8 @@
   @apply py-6 px-8;
   @apply w-full;
   max-width: var(--container-width);
+
+  @media (max-width: 640px) {
+    @apply py-4 px-6;
+  }
 }

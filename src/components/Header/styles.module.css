@@ -2,6 +2,12 @@
   @apply py-6 px-8;
   @apply flex items-center;
 
+  @media (max-width: 640px) {
+    @apply py-4 px-6;
+    @apply border-b border-gray-200;
+    @apply mb-4;
+  }
+
   div {
     @apply flex-1;
   }
