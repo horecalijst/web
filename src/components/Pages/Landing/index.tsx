@@ -8,7 +8,10 @@ import styles from './styles.module.css';
 
 const Landing = () => (
   <Layout>
-    <Meta title="Horecalijst" />
+    <Meta
+      title="Horecalijst"
+      description="Op een veilige manier contactgegevens van klanten bijhouden voor 14 dagen zonder al het gedoe? Dan ben je hier bij het juiste adres!"
+    />
     <Header />
     <Layout.Content>
       <div className={styles.landing}>
