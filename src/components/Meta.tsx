@@ -64,6 +64,10 @@ const Meta = (props: Props) => {
         href={`/favicon-16x16.png`}
       />
       <link rel="icon" type="image/x-icon" href={`favicon.ico`} />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap"
+        rel="stylesheet"
+      ></link>
     </Head>
   );
 };
