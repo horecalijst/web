@@ -39,13 +39,13 @@ const Meta = (props: Props) => {
       {!extraOgImage && (
         <meta
           property="og:image"
-          content={`${process.env.NEXT_PUBLIC_APP_URL}/static/og-square.jpg`}
+          content={`${process.env.NEXT_PUBLIC_APP_URL}/static/logo-square.jpg`}
         />
       )}
       <meta name="twitter:card" content="summary" />
       <meta
         name="twitter:image"
-        content={`${process.env.NEXT_PUBLIC_APP_URL}/static/og-square.jpg`}
+        content={`${process.env.NEXT_PUBLIC_APP_URL}/static/logo-square.jpg`}
       />
       <meta name="twitter:title" content={title} />
       {description && <meta name="twitter:description" content={description} />}
