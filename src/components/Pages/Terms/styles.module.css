@@ -1,0 +1,40 @@
+.terms {
+  @apply mb-12;
+  h2 {
+    font-family: 'Roboto Slab', serif;
+    @apply font-medium;
+    @apply text-3xl;
+    @apply text-gray-700;
+    @apply mb-4;
+  }
+
+  h3 {
+    @apply font-medium;
+    @apply text-2xl;
+    @apply text-gray-700;
+    @apply mb-2;
+  }
+
+  h2 + h3,
+  p + h3,
+  p + p,
+  ul + p,
+  p + ul,
+  ul + h3 {
+    @apply mt-6;
+  }
+
+  ul {
+    @apply list-inside;
+    list-style-type: lower-latin;
+
+    li {
+      @apply my-2;
+    }
+
+    ul {
+      @apply ml-4;
+      list-style-type: lower-roman;
+    }
+  }
+}

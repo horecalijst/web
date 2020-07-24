@@ -7,11 +7,6 @@
     @apply mb-4;
   }
 
-  p,
-  .info {
-    @apply text-lg;
-  }
-
   .info {
     @apply mt-8;
 
