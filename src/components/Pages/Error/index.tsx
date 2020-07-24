@@ -1,3 +1,4 @@
+import Header from 'components/Header';
 import Layout from 'components/Layout';
 import Meta from 'components/Meta';
 import React from 'react';
@@ -10,10 +11,11 @@ const Error = () => (
       title="Er ging iets mis!"
       extra={<meta name="robots" content="noindex, follow" />}
     />
+    <Header />
     <Layout.Content>
       <div className={styles.error}>
-        <h1>Er ging iets mis!</h1>
-        <p>Probeer het later even opnieuw.</p>
+        <h2>Whoops!</h2>
+        <p>Dit is vreemd, het lijkt erop dat er iets grondig fout ging!</p>
       </div>
     </Layout.Content>
   </Layout>
