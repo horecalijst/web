@@ -63,6 +63,7 @@ const Privacy = () => (
           </Link>
           .
         </p>
+        <p className={styles.note}>Laatst bijgewerkt op 25 juli 2020.</p>
       </div>
     </Layout.Content>
     <Footer />

@@ -130,6 +130,7 @@ const Terms = () => (
           onherroepelijk aan de exclusieve bevoegdheid van de rechtbanken in die
           staat of op die locatie.
         </p>
+        <p className={styles.note}>Laatst bijgewerkt op 25 juli 2020.</p>
       </div>
     </Layout.Content>
     <Footer />

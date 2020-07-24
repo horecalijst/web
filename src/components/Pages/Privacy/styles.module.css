@@ -38,4 +38,8 @@
       list-style-type: lower-roman;
     }
   }
+
+  .note {
+    @apply text-sm text-gray-500;
+  }
 }
