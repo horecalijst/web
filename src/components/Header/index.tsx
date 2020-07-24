@@ -14,7 +14,7 @@ const Header = () => (
     <div></div>
     <nav>
       <Link href="/">
-        <a>Aanmelden met zaak</a>
+        <a>Mijn zaak</a>
       </Link>
     </nav>
   </header>
