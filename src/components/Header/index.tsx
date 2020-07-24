@@ -13,7 +13,7 @@ const Header = () => (
     </Link>
     <div></div>
     <nav>
-      <Link href="/">
+      <Link href="/mijn-zaak">
         <a>Mijn zaak</a>
       </Link>
     </nav>

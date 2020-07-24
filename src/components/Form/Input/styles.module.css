@@ -6,7 +6,7 @@
   @apply w-full;
   @apply text-base font-medium;
   @apply py-2 px-3;
-  @apply leading-relaxed;
+  @apply leading-snug;
   @apply transition ease-in-out duration-150;
 
   &.error {
