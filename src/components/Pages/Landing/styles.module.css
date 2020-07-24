@@ -15,10 +15,18 @@
     }
   }
 
+  @media (max-width: 640px) {
+    @apply w-full;
+
+    h2 {
+      @apply text-2xl;
+    }
+  }
+
   form {
     @apply m-16 mt-12;
 
-    @media (max-width: 560px) {
+    @media (max-width: 640px) {
       @apply mx-0 mt-8;
     }
   }
