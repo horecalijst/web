@@ -1,0 +1,31 @@
+version: '2.1'
+
+services:
+  nginx:
+    image: docker.wouterdeschuyter.be/horecalijst/web:nginx
+    container_name: be.horecalijst--nginx
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.docker.network=reverse-proxy'
+      - 'traefik.http.middlewares.behorecalijst.redirectscheme.scheme=https'
+      - 'traefik.http.routers.behorecalijst-http.entrypoints=web'
+      - 'traefik.http.routers.behorecalijst-http.rule=Host(`horecalijst.be`)'
+      - 'traefik.http.routers.behorecalijst-http.middlewares=behorecalijst'
+      - 'traefik.http.routers.behorecalijst-https.entrypoints=websecure'
+      - 'traefik.http.routers.behorecalijst-https.rule=Host(`horecalijst.be`)'
+      - 'traefik.http.routers.behorecalijst-https.tls.certresolver=myhttpchallenge'
+    restart: unless-stopped
+    mem_limit: 8mb
+    networks:
+      - default
+      - reverse-proxy
+
+  node:
+    image: docker.wouterdeschuyter.be/horecalijst/web:node
+    container_name: be.horecalijst--node
+    restart: unless-stopped
+    mem_limit: 128mb
+
+networks:
+  reverse-proxy:
+    external: true

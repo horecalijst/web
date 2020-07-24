@@ -1,0 +1,11 @@
+.header {
+  @apply p-10;
+
+  .logo {
+    text-decoration: none;
+
+    img {
+      height: 36px;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+
+:root {
+  --font-size: 16px;
+  --container-width: 960px;
+  --color-tint: #6c5292;
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+html,
+body,
+#__next {
+  @apply min-h-full h-full;
+}
+
+#__next {
+  @apply h-auto;
+  @apply flex flex-col;
+}
+
+body {
+  @apply text-base text-gray-700;
+  @apply leading-relaxed antialiased;
+
+  a {
+    color: var(--color-tint);
+  }
+
+  #nprogress {
+    @apply pointer-events-none;
+
+    .bar {
+      @apply fixed top-0 left-0;
+      @apply z-50;
+      @apply w-full;
+      background-color: var(--color-tint);
+      height: 2px;
+    }
+  }
+}
+
+@tailwind utilities;

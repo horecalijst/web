@@ -1,0 +1,6 @@
+.vscode/
+.env
+.build-*
+.next/
+node_modules/
+dist/

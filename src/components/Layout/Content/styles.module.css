@@ -1,0 +1,6 @@
+.content {
+  @apply mx-auto;
+  @apply p-10;
+  @apply w-full;
+  max-width: var(--container-width);
+}

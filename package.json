@@ -1,0 +1,70 @@
+{
+  "name": "@horecalijst/web",
+  "version": "0.1.0",
+  "private": true,
+  "repository": "github:horecalijst/web",
+  "author": "Wouter De Schuyter <wouter.de.schuyter@gmail.com>",
+  "scripts": {
+    "build": "next build && webpack --config ./webpack.config.js",
+    "start": "next start",
+    "dev": "next",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx && tsc && stylelint src",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix && stylelint src --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint"
+    }
+  },
+  "dependencies": {
+    "@apollo/client": "^3.0.2",
+    "classnames": "^2.2.6",
+    "date-fns": "^2.15.0",
+    "graphql": "^15.0.0",
+    "graphql-tag": "^2.10.3",
+    "next": "^9.3.5",
+    "next-with-apollo": "^5.0.1",
+    "nookies": "^2.3.2",
+    "nprogress": "^0.2.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-icons": "^3.10.0",
+    "react-twemoji": "^0.2.3",
+    "sitemap": "^6.1.5",
+    "universal-cookie": "^4.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@types/classnames": "^2.2.10",
+    "@types/nprogress": "^0.2.0",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.6",
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
+    "babel-loader": "^8.0.6",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "eslint-plugin-simple-import-sort": "^5.0.2",
+    "husky": "^4.2.5",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^8.0.0",
+    "next-compose-plugins": "^2.2.0",
+    "next-optimized-images": "^2.6.0",
+    "postcss-preset-env": "^6.7.0",
+    "precss": "^4.0.0",
+    "prettier": "^2.0.5",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-prettier": "^1.1.2",
+    "tailwindcss": "^1.5.1",
+    "typescript": "^3.9.7",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^2.5.0"
+  }
+}
