@@ -1,12 +1,14 @@
 .button {
-  @apply bg-gray-900;
   @apply appearance-none;
+  @apply cursor-pointer;
+  @apply text-sm font-semibold;
+  @apply py-2 px-4;
   @apply rounded;
-  @apply text-sm font-medium;
-  @apply py-2;
-  @apply px-3;
-  @apply leading-relaxed;
-  @apply text-gray-100;
+  @apply inline-flex;
+  @apply items-center;
+  @apply no-underline;
+  @apply text-indigo-100;
+  @apply bg-gray-800;
   @apply transition ease-in-out duration-150;
   @apply relative;
 
@@ -59,6 +61,6 @@
   }
 
   &:hover {
-    @apply bg-gray-800;
+    @apply bg-gray-900;
   }
 }

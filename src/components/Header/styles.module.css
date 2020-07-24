@@ -35,11 +35,12 @@
       @apply items-center;
       @apply m-1;
       @apply no-underline;
-      @apply text-purple-100;
-      @apply bg-purple-800;
+      @apply text-indigo-100;
+      @apply bg-indigo-500;
+      @apply transition ease-in-out duration-150;
 
       &:hover {
-        @apply bg-purple-900;
+        @apply bg-indigo-600;
       }
     }
   }

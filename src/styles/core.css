@@ -32,7 +32,7 @@ body {
       @apply fixed top-0 left-0;
       @apply z-50;
       @apply w-full;
-      @apply bg-purple-800;
+      @apply bg-indigo-800;
       height: 2px;
     }
   }

@@ -27,7 +27,7 @@
     @apply mt-12;
     @apply p-4;
     @apply rounded;
-    @apply bg-gray-200;
+    @apply bg-indigo-100;
     @apply text-sm;
 
     strong {
