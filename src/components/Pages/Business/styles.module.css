@@ -11,6 +11,17 @@
     @apply mt-4;
   }
 
+  .break {
+    @apply block;
+  }
+
+  @media (max-width: 640px) {
+    .break {
+      @apply inline-block;
+      @apply w-1;
+    }
+  }
+
   .form {
     max-width: 420px;
   }

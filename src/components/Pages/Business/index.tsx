@@ -63,7 +63,7 @@ const Business = () => {
           <h2>Zakelijk</h2>
           <p>
             Horecauitbater? Meld je aan en probeer het nu gratis!
-            <br />
+            <span className={styles.break} />
             Eens u bent aangemeld kan u 1 of meerdere zaken toevoegen &amp;
             beheren.
           </p>
