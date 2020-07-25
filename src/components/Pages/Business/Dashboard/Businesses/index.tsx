@@ -1,6 +1,7 @@
 import { gql, useQuery } from '@apollo/client';
 import { useDidMount } from 'beautiful-react-hooks';
 import Table from 'components/Table';
+import Link from 'next/link';
 import React, { useMemo } from 'react';
 
 import styles from './styles.module.css';
@@ -80,7 +81,13 @@ const Businesses = () => {
                           ? ` (${business.numberOfContactsToday} vandaag)`
                           : ''}
                       </td>
-                      <td>--</td>
+                      <td>
+                        <Link href={`/zakelijk/${business.id}/export`}>
+                          <a className={styles.dataExportButton}>
+                            Exporteer data
+                          </a>
+                        </Link>
+                      </td>
                     </tr>
                   );
                 })}

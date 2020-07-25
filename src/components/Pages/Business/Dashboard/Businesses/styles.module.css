@@ -11,4 +11,22 @@
   .list {
     @apply mt-4;
   }
+
+  .dataExportButton {
+    @apply cursor-pointer;
+    @apply font-semibold text-sm;
+    @apply py-1 px-3;
+    @apply rounded;
+    @apply inline-flex;
+    @apply items-center;
+    @apply -my-1;
+    @apply no-underline;
+    @apply text-white;
+    @apply bg-gray-500;
+    @apply transition ease-in-out duration-150;
+
+    &:hover {
+      @apply bg-gray-600;
+    }
+  }
 }
