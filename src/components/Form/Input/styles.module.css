@@ -20,7 +20,7 @@
   }
 
   &:focus {
-    @apply border-indigo-500;
+    @apply border-gray-400;
     @apply outline-none;
   }
 

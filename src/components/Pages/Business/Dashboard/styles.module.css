@@ -50,8 +50,8 @@
     @apply inline-flex;
     @apply items-center;
     @apply no-underline;
-    @apply text-indigo-100;
-    @apply bg-gray-800;
+    @apply text-white;
+    @apply bg-indigo-500;
     @apply transition ease-in-out duration-150;
     @apply leading-snug;
   }

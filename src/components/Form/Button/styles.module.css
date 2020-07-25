@@ -7,11 +7,16 @@
   @apply inline-flex;
   @apply items-center;
   @apply no-underline;
-  @apply text-indigo-100;
-  @apply bg-gray-800;
+  @apply text-white;
+  @apply bg-indigo-500;
   @apply transition ease-in-out duration-150;
   @apply relative;
   @apply leading-snug;
+  @apply outline-none;
+
+  &:focus {
+    @apply outline-none;
+  }
 
   @keyframes spin {
     0% {
@@ -34,11 +39,11 @@
 
       path {
         &:first-child {
-          @apply text-gray-600;
+          @apply text-gray-400;
         }
 
         &:last-child {
-          @apply text-gray-400;
+          @apply text-gray-100;
         }
       }
     }
@@ -58,6 +63,6 @@
   }
 
   &:hover {
-    @apply bg-gray-900;
+    @apply bg-indigo-600;
   }
 }

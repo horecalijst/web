@@ -67,7 +67,7 @@
     ul {
       @apply relative;
       @apply bg-white;
-      @apply border border-indigo-500;
+      @apply border border-gray-400;
       @apply rounded-b;
       @apply border-t-0;
       @apply pt-1;
