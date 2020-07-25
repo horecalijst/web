@@ -18,6 +18,11 @@
     }
   }
 
+  &:focus {
+    @apply border-indigo-500;
+    @apply outline-none;
+  }
+
   &.error {
     @apply border-red-700;
   }

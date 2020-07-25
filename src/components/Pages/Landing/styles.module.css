@@ -58,4 +58,40 @@
       @apply mx-0 mt-8;
     }
   }
+
+  .autocomplete {
+    @apply relative;
+    @apply left-0 right-0;
+    top: -5px;
+
+    ul {
+      @apply relative;
+      @apply bg-white;
+      @apply border border-indigo-500;
+      @apply rounded-b;
+      @apply border-t-0;
+      @apply pt-1;
+      @apply overflow-hidden;
+
+      li {
+        @apply py-2 px-3;
+        @apply cursor-pointer;
+        @apply border-t border-gray-200;
+        @apply leading-snug;
+        z-index: 1;
+
+        .title {
+          @apply text-sm font-semibold;
+        }
+
+        .address {
+          @apply text-gray-600 text-xs;
+        }
+
+        &:hover {
+          @apply bg-gray-100;
+        }
+      }
+    }
+  }
 }
