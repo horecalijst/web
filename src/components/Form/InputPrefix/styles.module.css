@@ -1,0 +1,20 @@
+.inputPrefix {
+  @apply inline-block;
+  @apply bg-gray-100;
+  @apply border;
+  @apply rounded-l;
+  @apply text-base font-medium;
+  @apply py-2 px-3;
+  @apply leading-snug;
+
+  + input {
+    @apply rounded-l-none;
+    @apply inline-block;
+    @apply flex-1;
+    @apply border-l-0;
+  }
+}
+
+.inputPrefixContainer {
+  @apply flex;
+}
