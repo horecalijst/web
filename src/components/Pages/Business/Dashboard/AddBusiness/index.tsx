@@ -15,8 +15,12 @@ const AddBusiness = () => {
   const [vatNumber, setVatNumber] = useState('');
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
+  const [countryCode, setCountryCode] = useState('');
   const [didSubmit, setDidSubmit] = useState(false);
-  const [vatLookup, { loading, data }] = useMutation(gql`
+  const [
+    vatLookup,
+    { loading: loadingVatLookup, data: dataVatLookup },
+  ] = useMutation(gql`
     mutation vatLookup($vatNumber: String!) {
       vatLookup(vat: $vatNumber) {
         countryCode
@@ -27,13 +31,33 @@ const AddBusiness = () => {
       }
     }
   `);
+  const [
+    addBusiness,
+    { loading: loadingAddBusiness, data: dataAddBusiness },
+  ] = useMutation(gql`
+    mutation addBusiness(
+      $name: String!
+      $address: String!
+      $vatNumber: String!
+      $countryCode: String!
+    ) {
+      addBusiness(
+        name: $name
+        address: $address
+        vat: $vatNumber
+        country: $countryCode
+      ) {
+        id
+      }
+    }
+  `);
   const didSubmitSuccesfully = useMemo(() => {
     if (didSubmit !== true) {
       return false;
     }
 
-    return data?.vatLookup !== null;
-  }, [data?.vatLookup, didSubmit]);
+    return dataVatLookup?.vatLookup !== null;
+  }, [dataVatLookup?.vatLookup, didSubmit]);
   const [freezeLookup, setFreezeLookup] = useState(false);
 
   const onSubmit = useCallback(
@@ -42,28 +66,65 @@ const AddBusiness = () => {
 
       setDidSubmit(true);
 
-      vatLookup({ variables: { vatNumber } }).catch(() => {
-        alert('Er ging iets mis, probeer het later eens opnieuw.');
-        setDidSubmit(false);
-      });
+      if (name && address && vatNumber && countryCode) {
+        addBusiness({
+          variables: { name, address, vatNumber, countryCode },
+        }).catch(() => {
+          alert('Er ging iets mis, probeer het later eens opnieuw.');
+          setDidSubmit(false);
+        });
+      } else {
+        vatLookup({ variables: { vatNumber } }).catch(() => {
+          alert('Er ging iets mis, probeer het later eens opnieuw.');
+          setDidSubmit(false);
+        });
+      }
     },
-    [vatLookup, vatNumber],
+    [addBusiness, address, countryCode, name, vatLookup, vatNumber],
   );
 
   useEffect(() => {
-    if (data?.vatLookup && didSubmitSuccesfully) {
-      if (data?.vatLookup?.valid !== true) {
-        alert('De onderneming met dit BTW nummer lijkt niet (meer) actief.');
-      } else {
-        setVatNumber(data?.vatLookup?.vatNumber);
-        setName(data?.vatLookup?.name);
-        setAddress(data?.vatLookup?.address);
-        setFreezeLookup(true);
-      }
-
+    if (didSubmitSuccesfully && !loadingAddBusiness && !loadingVatLookup) {
       setDidSubmit(false);
     }
-  }, [data?.vatLookup, didSubmitSuccesfully]);
+  }, [didSubmitSuccesfully, loadingAddBusiness, loadingVatLookup]);
+
+  useEffect(() => {
+    if (didSubmitSuccesfully && !loadingVatLookup) {
+      if (dataVatLookup?.vatLookup?.valid) {
+        setVatNumber(dataVatLookup?.vatLookup?.vatNumber);
+        setName(dataVatLookup?.vatLookup?.name);
+        setAddress(dataVatLookup?.vatLookup?.address);
+        setCountryCode(dataVatLookup?.vatLookup?.countryCode);
+        setFreezeLookup(true);
+      } else {
+        alert('De onderneming met dit BTW nummer lijkt niet (meer) actief.');
+      }
+    }
+  }, [
+    dataVatLookup?.vatLookup?.address,
+    dataVatLookup?.vatLookup?.countryCode,
+    dataVatLookup?.vatLookup?.name,
+    dataVatLookup?.vatLookup?.valid,
+    dataVatLookup?.vatLookup?.vatNumber,
+    didSubmitSuccesfully,
+    loadingVatLookup,
+  ]);
+
+  useEffect(() => {
+    if (didSubmitSuccesfully && !loadingAddBusiness) {
+      if (dataAddBusiness?.addBusiness?.id) {
+        alert(
+          'Added business: ' + JSON.stringify(dataAddBusiness?.addBusiness),
+        );
+      }
+    }
+  }, [
+    dataAddBusiness?.addBusiness,
+    dataAddBusiness?.addBusiness?.id,
+    didSubmitSuccesfully,
+    loadingAddBusiness,
+  ]);
 
   return (
     <div className={styles.addBusiness}>
@@ -125,7 +186,10 @@ const AddBusiness = () => {
         </p>
         <br />
         <Form.Field>
-          <Form.Button type="submit" isLoading={loading}>
+          <Form.Button
+            type="submit"
+            isLoading={loadingVatLookup || loadingAddBusiness}
+          >
             {freezeLookup ? 'Zaak toevoegen' : 'Valideer'}
           </Form.Button>
         </Form.Field>
