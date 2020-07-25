@@ -40,7 +40,6 @@ const BusinessDashboard = () => {
         {addBusiness && <AddBusiness />}
         {!addBusiness && (
           <>
-            <h3>Overzicht</h3>
             <p>U hebt nog geen zaken toegevoegd.</p>
             <br />
             <Link href="/zakelijk/zaak-toevoegen">

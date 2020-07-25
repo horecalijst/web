@@ -1,5 +1,6 @@
 import { gql, useMutation } from '@apollo/client';
 import Form from 'components/Form';
+import { useRouter } from 'next/router';
 import React, {
   ChangeEvent,
   FormEvent,
@@ -12,6 +13,7 @@ import React, {
 import styles from './styles.module.css';
 
 const AddBusiness = () => {
+  const { push } = useRouter();
   const [vatNumber, setVatNumber] = useState('');
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
@@ -114,9 +116,7 @@ const AddBusiness = () => {
   useEffect(() => {
     if (didSubmitSuccesfully && !loadingAddBusiness) {
       if (dataAddBusiness?.addBusiness?.id) {
-        alert(
-          'Added business: ' + JSON.stringify(dataAddBusiness?.addBusiness),
-        );
+        push('/zakelijk');
       }
     }
   }, [
@@ -124,6 +124,7 @@ const AddBusiness = () => {
     dataAddBusiness?.addBusiness?.id,
     didSubmitSuccesfully,
     loadingAddBusiness,
+    push,
   ]);
 
   return (
