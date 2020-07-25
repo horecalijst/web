@@ -179,13 +179,13 @@ const AddBusiness = () => {
                 }
               />
             </Form.Field>
+            <p className={styles.note}>
+              * Deze gegevens zullen zichtbaar zijn wanneer klanten op uw zaak
+              zoeken in de vorm van een autocomplete.
+            </p>
+            <br />
           </>
         )}
-        <p className={styles.note}>
-          * Deze gegevens zullen zichtbaar zijn wanneer klanten op uw zaak
-          zoeken in de vorm van een autocomplete.
-        </p>
-        <br />
         <Form.Field>
           <Form.Button
             type="submit"
