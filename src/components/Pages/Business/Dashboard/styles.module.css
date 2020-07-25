@@ -10,8 +10,16 @@
       @apply leading-none;
       @apply text-3xl;
       @apply text-gray-700;
-      @apply flex-1;
       @apply m-0;
+      @apply cursor-pointer;
+
+      &:hover {
+        @apply text-gray-800;
+      }
+    }
+
+    .spacer {
+      @apply flex-1;
     }
 
     a {
@@ -22,5 +30,29 @@
         @apply text-indigo-600;
       }
     }
+  }
+
+  .content {
+    @apply py-4;
+  }
+
+  h3 {
+    @apply text-2xl;
+    @apply font-medium;
+    @apply mb-4;
+  }
+
+  .button {
+    @apply cursor-pointer;
+    @apply text-sm font-semibold;
+    @apply py-2 px-3;
+    @apply rounded;
+    @apply inline-flex;
+    @apply items-center;
+    @apply no-underline;
+    @apply text-indigo-100;
+    @apply bg-gray-800;
+    @apply transition ease-in-out duration-150;
+    @apply leading-snug;
   }
 }
