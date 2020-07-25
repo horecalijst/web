@@ -1,6 +1,12 @@
 .landing {
-  max-width: 560px;
-  margin: 0 auto;
+  .data {
+    max-width: 560px;
+    @apply my-0 mx-auto;
+
+    @media (max-width: 640px) {
+      @apply w-full;
+    }
+  }
 
   h2 {
     font-family: 'Roboto Slab', serif;
@@ -16,8 +22,6 @@
   }
 
   @media (max-width: 640px) {
-    @apply w-full;
-
     h2 {
       @apply text-2xl;
     }

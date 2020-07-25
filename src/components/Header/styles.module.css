@@ -43,7 +43,24 @@
   }
 
   nav {
-    a {
+    a:first-child {
+      @apply cursor-pointer;
+      @apply text-sm font-semibold;
+      @apply py-2 px-4;
+      @apply leading-snug;
+      @apply inline-flex;
+      @apply items-center;
+      @apply m-1 mr-2;
+      @apply no-underline;
+      @apply text-gray-500;
+      @apply transition ease-in-out duration-150;
+
+      &:hover {
+        @apply text-gray-600;
+      }
+    }
+
+    a:last-child {
       @apply cursor-pointer;
       @apply text-sm font-semibold;
       @apply py-2 px-4;
