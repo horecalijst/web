@@ -4,6 +4,7 @@ import Form from 'components/Form';
 import Header from 'components/Header';
 import Layout from 'components/Layout';
 import Meta from 'components/Meta';
+import { useUser } from 'data/user';
 import React, {
   ChangeEvent,
   FormEvent,
@@ -13,9 +14,11 @@ import React, {
   useState,
 } from 'react';
 
+import BusinessDashboard from './Dashboard';
 import styles from './styles.module.css';
 
 const Business = () => {
+  const [user] = useUser();
   const [createAuthenticationRequest, { loading, data }] = useMutation(gql`
     mutation createAuthenticationRequest($email: String!) {
       createAuthenticationRequest(email: $email)
@@ -60,33 +63,38 @@ const Business = () => {
       <Header />
       <Layout.Content>
         <div className={styles.business}>
-          <h2>Zakelijk</h2>
-          <p>
-            Horecauitbater? Meld je aan en probeer het nu gratis!
-            <span className={styles.break} />
-            Eens u bent aangemeld kan u 1 of meerdere zaken toevoegen &amp;
-            beheren.
-          </p>
-          <br />
-          <Form className={styles.form} onSubmit={onSubmit}>
-            <Form.Field>
-              <Form.Label htmlFor="email">Email</Form.Label>
-              <Form.Input
-                id="email"
-                name="email"
-                type="email"
-                value={email}
-                onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  setEmail(e.target.value)
-                }
-              />
-            </Form.Field>
-            <Form.Field>
-              <Form.Button type="submit" isLoading={loading}>
-                Aanmelden
-              </Form.Button>
-            </Form.Field>
-          </Form>
+          {user && <BusinessDashboard />}
+          {!user && (
+            <>
+              <h2>Zakelijk</h2>
+              <p>
+                Horecauitbater? Meld je aan en probeer het nu gratis!
+                <span className={styles.break} />
+                Eens u bent aangemeld kan u 1 of meerdere zaken toevoegen &amp;
+                beheren.
+              </p>
+              <br />
+              <Form className={styles.form} onSubmit={onSubmit}>
+                <Form.Field>
+                  <Form.Label htmlFor="email">Email</Form.Label>
+                  <Form.Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={email}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      setEmail(e.target.value)
+                    }
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <Form.Button type="submit" isLoading={loading}>
+                    Aanmelden
+                  </Form.Button>
+                </Form.Field>
+              </Form>
+            </>
+          )}
         </div>
       </Layout.Content>
       <Footer />
