@@ -39,9 +39,14 @@ const Button = (props: Props, ref: Ref<HTMLButtonElement>) => {
     [onClick, isLoading],
   );
 
+  const passedProps = { ...props };
+  if (typeof passedProps.isLoading !== 'undefined') {
+    delete passedProps.isLoading;
+  }
+
   return (
     <button
-      {...props}
+      {...passedProps}
       ref={ref}
       onClick={onClickProxy}
       className={cx({
