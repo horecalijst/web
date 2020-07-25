@@ -1,4 +1,5 @@
 import { gql, useQuery } from '@apollo/client';
+import { useDidMount } from 'beautiful-react-hooks';
 import Table from 'components/Table';
 import React, { useMemo } from 'react';
 
@@ -25,7 +26,7 @@ type Business = {
 };
 
 const Businesses = () => {
-  const { data: businessesData } = useQuery(BUSINESSES);
+  const { data: businessesData, refetch } = useQuery(BUSINESSES);
   const businesses = useMemo(() => {
     if (!businessesData?.businesses) {
       return [];
@@ -33,6 +34,10 @@ const Businesses = () => {
 
     return businessesData?.businesses || [];
   }, [businessesData]);
+
+  useDidMount(() => {
+    refetch();
+  });
 
   return (
     <div className={styles.businesses}>
