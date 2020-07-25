@@ -191,7 +191,7 @@ const AddBusiness = () => {
             type="submit"
             isLoading={loadingVatLookup || loadingAddBusiness}
           >
-            {freezeLookup ? 'Zaak toevoegen' : 'Valideer'}
+            {freezeLookup ? 'Zaak toevoegen' : 'Valideren'}
           </Form.Button>
         </Form.Field>
       </Form>
