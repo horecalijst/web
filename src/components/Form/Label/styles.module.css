@@ -3,6 +3,7 @@
   @apply text-gray-700 text-sm;
   @apply font-semibold;
   @apply mb-2;
+  @apply leading-snug;
 
   &.error {
     @apply text-red-700;
