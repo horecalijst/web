@@ -65,7 +65,8 @@ const Businesses = () => {
                 {businesses.map((business: Business, key: string) => {
                   return (
                     <Link
-                      href={`/zakelijk/${business.id}`}
+                      href="/zakelijk/[id]"
+                      as={`/zakelijk/${business.id}`}
                       key={`business-${key}`}
                     >
                       <tr>
@@ -87,7 +88,10 @@ const Businesses = () => {
                             : ''}
                         </td>
                         <td>
-                          <Link href={`/zakelijk/${business.id}`}>
+                          <Link
+                            href="/zakelijk/[id]"
+                            as={`/zakelijk/${business.id}`}
+                          >
                             <a className={styles.dataExportButton}>
                               Exporteer data
                             </a>

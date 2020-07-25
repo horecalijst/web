@@ -6,6 +6,7 @@ import React, { useCallback, useMemo } from 'react';
 
 import AddBusiness from './AddBusiness';
 import Businesses from './Businesses';
+import BusinessDetail from './Detail';
 import styles from './styles.module.css';
 
 const BusinessDashboard = () => {
@@ -13,6 +14,9 @@ const BusinessDashboard = () => {
   const [, setValue] = useCookie(Cookies.JWT);
   const { pathname } = useRouter();
   const addBusiness = useMemo(() => pathname === '/zakelijk/zaak-toevoegen', [
+    pathname,
+  ]);
+  const businessDetail = useMemo(() => pathname === '/zakelijk/[id]', [
     pathname,
   ]);
 
@@ -39,7 +43,7 @@ const BusinessDashboard = () => {
       </div>
       <div className={styles.content}>
         {addBusiness && <AddBusiness />}
-        {!addBusiness && (
+        {!addBusiness && !businessDetail && (
           <>
             <Businesses />
             <br />
@@ -48,6 +52,7 @@ const BusinessDashboard = () => {
             </Link>
           </>
         )}
+        {businessDetail && <BusinessDetail />}
       </div>
     </div>
   );
