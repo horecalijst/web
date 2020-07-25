@@ -1,3 +1,8 @@
 .addBusiness {
   max-width: 360px;
+
+  .note {
+    @apply text-gray-500 text-sm;
+    @apply leading-tight;
+  }
 }

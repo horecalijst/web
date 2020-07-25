@@ -84,7 +84,9 @@ const AddBusiness = () => {
         {freezeLookup && (
           <>
             <Form.Field>
-              <Form.Label htmlFor="name">Naam</Form.Label>
+              <Form.Label htmlFor="name">
+                Naam <span className={styles.note}>*</span>
+              </Form.Label>
               <Form.Input
                 id="name"
                 name="name"
@@ -97,7 +99,9 @@ const AddBusiness = () => {
             </Form.Field>
 
             <Form.Field>
-              <Form.Label htmlFor="name">Adres</Form.Label>
+              <Form.Label htmlFor="name">
+                Adres <span className={styles.note}>*</span>
+              </Form.Label>
               <Form.Input
                 id="address"
                 name="address"
@@ -110,6 +114,11 @@ const AddBusiness = () => {
             </Form.Field>
           </>
         )}
+        <p className={styles.note}>
+          * Deze gegevens zullen zichtbaar zijn wanneer klanten op uw zaak
+          zoeken in de vorm van een autocomplete.
+        </p>
+        <br />
         <Form.Field>
           <Form.Button type="submit" isLoading={loading}>
             {freezeLookup ? 'Zaak toevoegen' : 'Valideer'}
