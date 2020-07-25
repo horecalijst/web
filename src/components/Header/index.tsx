@@ -14,8 +14,8 @@ const Header = () => (
     <div></div>
     <nav>
       <a href="/#hoe-het-werkt">Hoe werkt het?</a>
-      <Link href="/mijn-zaak">
-        <a>Mijn zaak</a>
+      <Link href="/zakelijk">
+        <a>Zakelijk</a>
       </Link>
     </nav>
   </header>

@@ -26,7 +26,7 @@ const HowItWorks = () => (
     </p>
 
     <div className={styles.cta}>
-      <Link href="/mijn-zaak">
+      <Link href="/zakelijk">
         <a>Probeer het gratis!</a>
       </Link>
     </div>

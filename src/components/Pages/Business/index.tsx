@@ -15,7 +15,7 @@ import React, {
 
 import styles from './styles.module.css';
 
-const MyBusiness = () => {
+const Business = () => {
   const [createAuthenticationRequest, { loading, data }] = useMutation(gql`
     mutation createAuthenticationRequest($email: String!) {
       createAuthenticationRequest(email: $email)
@@ -55,14 +55,16 @@ const MyBusiness = () => {
 
   return (
     <Layout>
-      <Meta title="Mijn zaak" />
+      <Meta title="Zakelijk" />
       <Header />
       <Layout.Content>
-        <div className={styles.myBusiness}>
-          <h2>Mijn zaak</h2>
+        <div className={styles.business}>
+          <h2>Zakelijk</h2>
           <p>
-            Meld je aan en probeer het nu gratis. Eens u bent aangemeld kan u 1
-            of meerdere zaken toevoegen &amp; beheren.
+            Horecauitbater? Meld je aan en probeer het nu gratis!
+            <br />
+            Eens u bent aangemeld kan u 1 of meerdere zaken toevoegen &amp;
+            beheren.
           </p>
           <br />
           <Form className={styles.form} onSubmit={onSubmit}>
@@ -91,4 +93,4 @@ const MyBusiness = () => {
   );
 };
 
-export default MyBusiness;
+export default Business;

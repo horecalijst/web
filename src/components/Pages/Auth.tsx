@@ -29,10 +29,10 @@ Auth.getInitialProps = async (ctx: NextPageContext) => {
       });
     }
   } catch {
-    return res?.writeHead(302, { Location: `/sign-in` }).end();
+    return res?.writeHead(302, { Location: `/zakelijk` }).end();
   }
 
-  return res?.writeHead(302, { Location: `/dashboard` }).end();
+  return res?.writeHead(302, { Location: `/zakelijk` }).end();
 };
 
 export default Auth;
