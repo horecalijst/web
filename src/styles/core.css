@@ -26,6 +26,10 @@ body {
   @apply text-base text-gray-700;
   @apply leading-relaxed antialiased;
 
+  strong {
+    @apply font-semibold;
+  }
+
   #nprogress {
     @apply pointer-events-none;
 
