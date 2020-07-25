@@ -1,6 +1,10 @@
 .howItWorks {
   @apply mt-24 mx-auto mb-20;
-  max-width: 768px;
+  max-width: 600px;
+
+  @media (max-width: 640px) {
+    @apply mt-16 mb-12;
+  }
 
   h2 {
     font-family: 'Roboto Slab', serif;
