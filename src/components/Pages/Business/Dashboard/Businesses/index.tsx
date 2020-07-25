@@ -47,6 +47,8 @@ const Businesses = () => {
                   <th>Naam</th>
                   <th>Adres</th>
                   <th>Status</th>
+                  <th>Contacten</th>
+                  <th>Data exporteren</th>
                 </tr>
               </thead>
               <tbody>
@@ -59,6 +61,8 @@ const Businesses = () => {
                       <td>
                         <span className={styles.status}>Actief (trial)</span>
                       </td>
+                      <td>--</td>
+                      <td>--</td>
                     </tr>
                   );
                 })}
