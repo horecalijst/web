@@ -14,7 +14,8 @@
     @apply cursor-not-allowed;
 
     &:focus {
-      outline: 0;
+      @apply outline-none;
+      @apply border-gray-300;
     }
   }
 
