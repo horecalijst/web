@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { NextPageContext } from 'next';
 import Cookie, { Cookies } from 'services/cookie';
 import Network from 'services/network';

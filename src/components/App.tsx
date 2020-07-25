@@ -1,8 +1,8 @@
 import { ApolloProvider } from '@apollo/client';
+import { gql } from '@apollo/client';
 import { getDataFromTree } from '@apollo/client/react/ssr';
 import GoogleAnalyticsSDK from 'components/GoogleAnalyticsSDK';
 import { User, UserContextProvider } from 'data/user';
-import gql from 'graphql-tag';
 import withApollo from 'next-with-apollo';
 import NextApp, { AppContext } from 'next/app';
 import Router from 'next/router';

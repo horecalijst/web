@@ -1,6 +1,6 @@
+import { gql } from '@apollo/client';
 import Layout from 'components/Layout';
 import Meta from 'components/Meta';
-import gql from 'graphql-tag';
 import { NextComponentType, NextPageContext } from 'next';
 import React from 'react';
 import Cookie from 'services/cookie';
