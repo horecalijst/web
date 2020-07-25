@@ -64,31 +64,37 @@ const Businesses = () => {
               <tbody>
                 {businesses.map((business: Business, key: string) => {
                   return (
-                    <tr key={`business-${key}`}>
-                      <td>
-                        {business.country}
-                        {business.vat.substr(0, 4)}.{business.vat.substr(4, 3)}.
-                        {business.vat.substr(7, 3)}
-                      </td>
-                      <td>{business.name}</td>
-                      <td>{business.address}</td>
-                      <td>
-                        <span className={styles.status}>trial</span>
-                      </td>
-                      <td>
-                        {business.numberOfContactsTotal}
-                        {business.numberOfContactsToday
-                          ? ` (${business.numberOfContactsToday} vandaag)`
-                          : ''}
-                      </td>
-                      <td>
-                        <Link href={`/zakelijk/${business.id}/export`}>
-                          <a className={styles.dataExportButton}>
-                            Exporteer data
-                          </a>
-                        </Link>
-                      </td>
-                    </tr>
+                    <Link
+                      href={`/zakelijk/${business.id}`}
+                      key={`business-${key}`}
+                    >
+                      <tr>
+                        <td>
+                          {business.country}
+                          {business.vat.substr(0, 4)}.
+                          {business.vat.substr(4, 3)}.
+                          {business.vat.substr(7, 3)}
+                        </td>
+                        <td>{business.name}</td>
+                        <td>{business.address}</td>
+                        <td>
+                          <span className={styles.status}>trial</span>
+                        </td>
+                        <td>
+                          {business.numberOfContactsTotal}
+                          {business.numberOfContactsToday
+                            ? ` (${business.numberOfContactsToday} vandaag)`
+                            : ''}
+                        </td>
+                        <td>
+                          <Link href={`/zakelijk/${business.id}`}>
+                            <a className={styles.dataExportButton}>
+                              Exporteer data
+                            </a>
+                          </Link>
+                        </td>
+                      </tr>
+                    </Link>
                   );
                 })}
               </tbody>

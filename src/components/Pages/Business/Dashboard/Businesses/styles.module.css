@@ -10,6 +10,14 @@
 
   .list {
     @apply mt-4;
+
+    tr {
+      @apply cursor-pointer;
+
+      &:hover {
+        @apply bg-gray-100;
+      }
+    }
   }
 
   .dataExportButton {
