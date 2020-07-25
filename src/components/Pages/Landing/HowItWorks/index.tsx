@@ -15,7 +15,7 @@ const HowItWorks = () => (
     </p>
     <p>
       Dit is waar Horecalijst jou met kan helpen! Voor slechts{' '}
-      <strong>€10 per maand</strong> kan je jouw zaak bij ons aansluiten.{' '}
+      <strong>€10 per maand</strong> kan u uw zaak bij ons aansluiten.{' '}
       <strong>
         Wij handelen alles inzake het bewaren &amp; vernietigen van
         contactgegevens voor u af.
