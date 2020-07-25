@@ -48,7 +48,7 @@ const Businesses = () => {
             <table>
               <thead>
                 <tr>
-                  <th>Ondernemingsnummer</th>
+                  <th>BTW-nummer</th>
                   <th>Naam</th>
                   <th>Adres</th>
                   <th>Status</th>
@@ -60,11 +60,15 @@ const Businesses = () => {
                 {businesses.map((business: Business, key: string) => {
                   return (
                     <tr key={`business-${key}`}>
-                      <td>{business.vat}</td>
+                      <td>
+                        {business.country}
+                        {business.vat.substr(0, 4)}.{business.vat.substr(4, 3)}.
+                        {business.vat.substr(7, 3)}
+                      </td>
                       <td>{business.name}</td>
                       <td>{business.address}</td>
                       <td>
-                        <span className={styles.status}>Actief (trial)</span>
+                        <span className={styles.status}>trial</span>
                       </td>
                       <td>--</td>
                       <td>--</td>
