@@ -55,6 +55,10 @@
       @apply text-gray-500;
       @apply transition ease-in-out duration-150;
 
+      @media (max-width: 480px) {
+        @apply hidden;
+      }
+
       &:hover {
         @apply text-gray-600;
       }
