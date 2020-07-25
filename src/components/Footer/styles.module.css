@@ -21,4 +21,32 @@
       }
     }
   }
+
+  @media (max-width: 640px) {
+    @apply flex-col;
+
+    p {
+      @apply pb-2 px-6;
+    }
+
+    nav {
+      @apply pt-0;
+      @apply text-left;
+      @apply pl-4;
+
+      a {
+        @apply px-2;
+      }
+    }
+  }
+
+  @media (max-width: 360px) {
+    nav {
+      @apply text-sm font-medium;
+
+      a {
+        @apply px-1 py-2;
+      }
+    }
+  }
 }
