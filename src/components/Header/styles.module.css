@@ -19,14 +19,26 @@
     font-family: 'Roboto Slab', serif;
 
     h1 {
-      @apply text-xl;
-      @apply ml-4;
+      @apply text-2xl;
+      @apply ml-5;
+      @apply leading-none;
     }
 
     img {
-      @apply w-8 h-8;
+      @apply w-10 h-10;
       @apply rounded-sm;
       @apply overflow-hidden;
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        @apply text-xl;
+        @apply ml-4;
+      }
+
+      img {
+        @apply w-8 h-8;
+      }
     }
   }
 
