@@ -50,11 +50,11 @@ const withAuth = (Component: NextComponentType) => {
       const { data } = await Network.apollo.query({ query: ME });
       user = data?.me || null;
     } catch {
-      return res?.writeHead(302, { Location: '/admin/authenticate' }).end();
+      return res?.writeHead(302, { Location: '/zakelijk' }).end();
     }
 
     if (!user) {
-      return res?.writeHead(302, { Location: '/admin/authenticate' }).end();
+      return res?.writeHead(302, { Location: '/zakelijk' }).end();
     }
 
     const initialProps = Component?.getInitialProps
