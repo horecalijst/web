@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import React, { useCallback, useMemo } from 'react';
 
 import AddBusiness from './AddBusiness';
+import Businesses from './Businesses';
 import styles from './styles.module.css';
 
 const BusinessDashboard = () => {
@@ -40,7 +41,7 @@ const BusinessDashboard = () => {
         {addBusiness && <AddBusiness />}
         {!addBusiness && (
           <>
-            <p>U hebt nog geen zaken toegevoegd.</p>
+            <Businesses />
             <br />
             <Link href="/zakelijk/zaak-toevoegen">
               <a className={styles.button}>Nieuwe zaak toevoegen</a>

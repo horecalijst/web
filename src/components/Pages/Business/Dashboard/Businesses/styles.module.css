@@ -1,0 +1,14 @@
+.businesses {
+  .status {
+    @apply px-2;
+    @apply inline-flex;
+    @apply text-xs leading-5 font-semibold;
+    @apply rounded;
+    @apply text-green-700 bg-green-100;
+    @apply uppercase;
+  }
+
+  .list {
+    @apply mt-4;
+  }
+}
