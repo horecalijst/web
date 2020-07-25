@@ -52,11 +52,16 @@ const AddBusiness = () => {
 
   useEffect(() => {
     if (data?.vatLookup && didSubmitSuccesfully) {
-      setVatNumber(data?.vatLookup?.vatNumber);
-      setName(data?.vatLookup?.name);
-      setAddress(data?.vatLookup?.address);
+      if (data?.vatLookup?.valid !== true) {
+        alert('De onderneming met dit BTW nummer lijkt niet (meer) actief.');
+      } else {
+        setVatNumber(data?.vatLookup?.vatNumber);
+        setName(data?.vatLookup?.name);
+        setAddress(data?.vatLookup?.address);
+        setFreezeLookup(true);
+      }
+
       setDidSubmit(false);
-      setFreezeLookup(true);
     }
   }, [data?.vatLookup, didSubmitSuccesfully]);
 
