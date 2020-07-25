@@ -14,6 +14,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
+import { FaTimes } from 'react-icons/fa';
 
 import HowItWorks from './HowItWorks';
 import PrivacyDisclaimer from './PrivacyDisclaimer';
@@ -32,6 +33,7 @@ const Landing = () => {
   const [phone, setPhone] = useState('');
   const [business, setBusiness] = useState('');
   const [businessId, setBusinessId] = useState('');
+  const [contactId, setContactId] = useState('');
   const [didSubmit, setDidSubmit] = useState(false);
   const [hoveringOverAutocomplete, setHoveringOverAutocomplete] = useState(
     false,
@@ -135,18 +137,22 @@ const Landing = () => {
 
   useEffect(() => {
     if (didSubmitSuccesfully) {
-      alert('contact added!');
-      setDidSubmit(false);
-      setEmail('');
-      setPhone('');
-      setBusinessId('');
-      setBusiness('');
-      setName('');
+      setContactId(dataAddContact?.addContact.id);
     }
-  }, [didSubmitSuccesfully]);
+  }, [dataAddContact?.addContact.id, didSubmitSuccesfully]);
+
+  const onCloseSuccess = () => {
+    setDidSubmit(false);
+    setEmail('');
+    setPhone('');
+    setBusinessId('');
+    setBusiness('');
+    setName('');
+    setContactId('');
+  };
 
   return (
-    <Layout>
+    <Layout hideOverflow={!!contactId}>
       <Meta
         title="Horecalijst"
         description="Op een veilige manier contactgegevens van klanten bijhouden voor 14 dagen zonder al het gedoe? Dan ben je hier bij het juiste adres!"
@@ -154,6 +160,18 @@ const Landing = () => {
       <Header />
       <Layout.Content>
         <div className={styles.landing}>
+          {contactId && (
+            <div className={styles.contactAdded}>
+              <a className={styles.closeButton} onClick={onCloseSuccess}>
+                <FaTimes />
+              </a>
+              <div>
+                <h2>Geregistreerd!</h2>
+                <p>We hebben je gegevens goed ontvangen, relax &amp; geniet!</p>
+                <div className={styles.id}>{contactId}</div>
+              </div>
+            </div>
+          )}
           <div className={styles.data}>
             <h2>
               Op restaurant of café? Laat je gegevens <strong>veilig</strong>{' '}

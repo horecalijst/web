@@ -1,4 +1,59 @@
 .landing {
+  .contactAdded {
+    @apply absolute;
+    @apply top-0 left-0 right-0 bottom-0;
+    @apply p-6;
+    @apply bg-green-600;
+    @apply z-50;
+    @apply flex items-center;
+    @apply text-center;
+
+    .closeButton {
+      @apply absolute;
+      @apply inline-block;
+      @apply text-2xl;
+      @apply text-green-100;
+      @apply p-4;
+      @apply cursor-pointer;
+      top: 0.25em;
+      right: 0.25em;
+
+      &:hover {
+        @apply text-white;
+      }
+    }
+
+    > div {
+      @apply mx-auto mb-20;
+      max-width: 340px;
+    }
+
+    h2 {
+      @apply text-white;
+      @apply text-4xl;
+    }
+
+    p {
+      @apply text-lg;
+      @apply text-green-100;
+      @apply mt-4;
+    }
+
+    .id {
+      @apply bg-green-300;
+      @apply p-2;
+      @apply rounded;
+      @apply text-green-800;
+      @apply font-semibold text-sm;
+      @apply inline-block;
+      @apply mt-8;
+
+      @media (min-width: 400px) {
+        @apply px-4;
+      }
+    }
+  }
+
   .data {
     max-width: 560px;
     @apply my-0 mx-auto;
