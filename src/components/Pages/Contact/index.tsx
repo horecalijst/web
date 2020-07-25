@@ -19,12 +19,20 @@ const Contact = () => (
         </p>
 
         <div className={styles.info}>
-          <div>Wouter De Schuyter</div>
           <div>
-            <FaEnvelope /> info@horecalijst.be
+            <strong className={styles.item}>Wouter De Schuyter</strong>
+            <div className={styles.item}>
+              <FaEnvelope /> info@horecalijst.be
+            </div>
+            <div className={styles.item}>
+              <FaPhoneAlt /> +32 479 22 82 10
+            </div>
           </div>
           <div>
-            <FaPhoneAlt /> +32 479 22 82 10
+            <strong className={styles.item}>Contact tracing dataverzoek</strong>
+            <div className={styles.item}>
+              <FaEnvelope /> contact-tracing@horecalijst.be
+            </div>
           </div>
         </div>
       </div>

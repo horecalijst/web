@@ -9,15 +9,24 @@
 
   .info {
     @apply mt-4;
+    @apply flex;
 
-    > div {
+    > div + div {
+      @apply ml-12;
+    }
+
+    @media (max-width: 640px) {
+      @apply flex-col;
+
+      > div + div {
+        @apply ml-0 mt-4;
+      }
+    }
+
+    .item {
       @apply flex items-center;
       @apply leading-snug;
       @apply py-1;
-
-      &:first-child {
-        @apply font-medium;
-      }
 
       svg {
         @apply mr-2;
