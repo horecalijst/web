@@ -60,8 +60,6 @@ const AddBusiness = () => {
     }
   }, [data?.vatLookup, didSubmitSuccesfully]);
 
-  console.log({ vatNumber, name, address });
-
   return (
     <div className={styles.addBusiness}>
       <h3>Zaak toevoegen</h3>
@@ -69,7 +67,7 @@ const AddBusiness = () => {
         <Form.Field>
           <Form.Label htmlFor="vatNumber">BTW nummer</Form.Label>
           <Form.InputPrefix.Container>
-            <Form.InputPrefix htmlFor="vatNumber">BE</Form.InputPrefix>
+            <Form.InputPrefix>BE</Form.InputPrefix>
             <Form.Input
               id="vatNumber"
               name="vatNumber"
