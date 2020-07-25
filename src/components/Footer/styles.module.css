@@ -8,13 +8,13 @@
   }
 
   nav {
-    @apply py-3 px-4;
+    @apply py-3 px-5;
     @apply flex-1;
     @apply text-right;
 
     a {
       @apply inline-block;
-      @apply py-3 px-4;
+      @apply py-3 px-3;
 
       &:hover {
         @apply text-gray-600;
