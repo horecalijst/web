@@ -26,12 +26,6 @@ const Contact = () => (
               <FaPhoneAlt /> +32 479 22 82 10
             </div>
           </div>
-          <div>
-            <strong className={styles.item}>Contact tracing dataverzoek</strong>
-            <div className={styles.item}>
-              <FaEnvelope /> contact-tracing@horecalijst.be
-            </div>
-          </div>
         </div>
       </div>
     </Layout.Content>
