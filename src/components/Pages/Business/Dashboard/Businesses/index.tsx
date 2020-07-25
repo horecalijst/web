@@ -13,6 +13,8 @@ const BUSINESSES = gql`
       address
       country
       vat
+      numberOfContactsToday
+      numberOfContactsTotal
     }
   }
 `;
@@ -23,6 +25,8 @@ type Business = {
   address: string;
   country: string;
   vat: string;
+  numberOfContactsToday: number;
+  numberOfContactsTotal: number;
 };
 
 const Businesses = () => {
@@ -70,7 +74,12 @@ const Businesses = () => {
                       <td>
                         <span className={styles.status}>trial</span>
                       </td>
-                      <td>--</td>
+                      <td>
+                        {business.numberOfContactsTotal}
+                        {business.numberOfContactsToday
+                          ? ` (${business.numberOfContactsToday} vandaag)`
+                          : ''}
+                      </td>
                       <td>--</td>
                     </tr>
                   );
