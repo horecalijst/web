@@ -14,9 +14,7 @@ const Contact = () => (
     <Layout.Content>
       <div className={styles.contact}>
         <h2>Contact</h2>
-        <p>
-          Voor vragen en of opmerkingen kan u terecht via onderstaande gegevens.
-        </p>
+        <p>Vragen of opmerkingen? Laat het ons weten. We zijn één en al oor!</p>
 
         <div className={styles.info}>
           <div>

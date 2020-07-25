@@ -68,10 +68,10 @@ const Business = () => {
             <>
               <h2>Zakelijk</h2>
               <p>
-                Horecauitbater? Meld je aan en probeer het nu gratis!
+                Probeer horecalijst nu gratis. Baat u meerdere zaken uit? Deze
+                beheert u makkelijk met hetzelfde profiel.
                 <span className={styles.break} />
-                Eens u bent aangemeld kan u 1 of meerdere zaken toevoegen &amp;
-                beheren.
+                Gebruik uw email om aan te melden.
               </p>
               <br />
               <Form className={styles.form} onSubmit={onSubmit}>

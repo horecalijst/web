@@ -4,11 +4,11 @@ import styles from './styles.module.css';
 
 const PrivacyDisclaimer = () => (
   <div className={styles.privacyDisclaimer}>
-    ⚠️ Privacy is belangrijk, dat vinden wij ook. Uw gegevens worden op een
-    veilige manier bijgehouden en zijn enkel toegangkelijk voor autoriteiten op
-    verzoek.{' '}
+    ⚠️ Privacy is belangrijk, dat vinden wij ook. Jouw gegevens worden veilig
+    opgeslagen en worden enkel gedeeld met bevoegde autoriteiten in het kader
+    van contactonderzoek.{' '}
     <strong>
-      Na 14 dagen worden deze gegevens ook weer automatisch verwijderd.
+      Na 14 dagen worden jouw gegevens ook steeds definitief verwijderd.
     </strong>
   </div>
 );

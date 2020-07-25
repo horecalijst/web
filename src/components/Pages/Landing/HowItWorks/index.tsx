@@ -7,22 +7,18 @@ const HowItWorks = () => (
   <div className={styles.howItWorks}>
     <h2 id="hoe-het-werkt">Hoe werkt het?</h2>
     <p>
-      U bent restauranthouder of werkt elders in de horeca? Leuk! Jammer genoeg
-      zijn de voorbije maanden niet makkelijk geweest. De bijkomende
-      coronamaatregelen zoals het bijhouden (en het vernietigen) van
-      contactgegevens van klanten daar bovenop maken het er ook zeker niet
-      eenvoudiger op.
+      Voor u als horeca-uitbater is het bijhouden van de contactgegevens van uw
+      klanten de nieuwste in een steeds langer wordende lijst van
+      coronamaatregelen. Voor slechts <strong>€10 per maand</strong> verzorgt
+      Horecalijst de correcte registratie, opslag (én automatische vernietiging)
+      van de klantengegevens.
     </p>
     <p>
-      Dit is waar Horecalijst jou met kan helpen! Voor slechts{' '}
-      <strong>€10 per maand</strong> kan u uw zaak bij ons aansluiten.{' '}
-      <strong>
-        Wij handelen alles inzake het bewaren &amp; vernietigen van
-        contactgegevens voor u af.
-      </strong>{' '}
-      De klant moet hier zijn gegevens invullen op basis van een self-service
-      principe. Wanneer u gecontacteerd zou worden door een contacttracing
-      center kan u hen deze gegevens overhandigen via deze tool.
+      U vraagt uw klanten bij het binnenkomen hun gegevens in te vullen bij
+      Horecalijst. Dit kan eenvoudigweg via hun eigen smartphone. Wordt uw zaak
+      gecontacteerd in het kader van een officieel contactonderzoek? Horecalijst
+      zorgt voor een geautomatiseerde export van de nodige gegevens, zonder de
+      privacy van uw klanten in het gedrang te brengen.
     </p>
 
     <div className={styles.cta}>

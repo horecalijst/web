@@ -15,7 +15,7 @@
     @apply block;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 820px) {
     .break {
       @apply inline-block;
       @apply w-1;

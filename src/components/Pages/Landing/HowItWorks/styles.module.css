@@ -1,6 +1,6 @@
 .howItWorks {
   @apply mt-24 mx-auto mb-20;
-  max-width: 600px;
+  max-width: 580px;
 
   @media (max-width: 640px) {
     @apply mt-16 mb-12;
@@ -12,6 +12,7 @@
     @apply text-3xl;
     @apply text-gray-700;
     @apply text-center;
+    @apply mb-6;
   }
 
   h2 + p,
