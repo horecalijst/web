@@ -1,4 +1,5 @@
-import { gql, useQuery } from '@apollo/client';
+import { gql, useMutation, useQuery } from '@apollo/client';
+import cx from 'classnames';
 import Footer from 'components/Footer';
 import Form from 'components/Form';
 import Header from 'components/Header';
@@ -6,8 +7,10 @@ import Layout from 'components/Layout';
 import Meta from 'components/Meta';
 import React, {
   ChangeEvent,
+  FormEvent,
   MouseEvent,
   useCallback,
+  useEffect,
   useMemo,
   useState,
 } from 'react';
@@ -24,8 +27,12 @@ type Business = {
 
 const Landing = () => {
   const [enableAutocomplete, setEnableAutocomplete] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [business, setBusiness] = useState('');
-  const [, setSelectedBusiness] = useState('');
+  const [businessId, setBusinessId] = useState('');
+  const [didSubmit, setDidSubmit] = useState(false);
   const [hoveringOverAutocomplete, setHoveringOverAutocomplete] = useState(
     false,
   );
@@ -43,6 +50,26 @@ const Landing = () => {
       variables: { q: business },
     },
   );
+  const [
+    addContact,
+    { loading: addContactLoading, data: dataAddContact },
+  ] = useMutation(gql`
+    mutation addContact(
+      $name: String
+      $phone: String
+      $email: String
+      $businessId: String!
+    ) {
+      addContact(
+        name: $name
+        email: $email
+        phone: $phone
+        businessId: $businessId
+      ) {
+        id
+      }
+    }
+  `);
 
   const businesses = useMemo(() => {
     if (businessAutocompleteData?.businessAutocomplete) {
@@ -59,12 +86,64 @@ const Landing = () => {
 
         setEnableAutocomplete(false);
         setBusiness(business.name);
-        setSelectedBusiness(business.id);
         setHoveringOverAutocomplete(false);
+        setTimeout(() => setBusinessId(business.id), 1);
       }
     },
     [],
   );
+
+  const didSubmitSuccesfully = useMemo(() => {
+    if (didSubmit !== true) {
+      return false;
+    }
+
+    return !!dataAddContact?.addContact;
+  }, [dataAddContact?.addContact, didSubmit]);
+
+  const onSubmit = useCallback(
+    (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+
+      setDidSubmit(true);
+
+      addContact({ variables: { name, email, phone, businessId } }).catch(
+        (e) => {
+          if (e.message === 'both email & phone are missing') {
+            alert('Je moet op zijn minst je email of telefoonnummer opgeven.');
+            setDidSubmit(false);
+            return;
+          }
+
+          if (e.message === 'invalid businessId') {
+            alert('Gelieve een zaak uit de dropdown te selecteren.');
+            setDidSubmit(false);
+            return;
+          }
+
+          alert('Er ging iets mis, probeer het later eens opnieuw.');
+          setDidSubmit(false);
+        },
+      );
+    },
+    [addContact, businessId, email, name, phone],
+  );
+
+  useEffect(() => {
+    setBusinessId('');
+  }, [business]);
+
+  useEffect(() => {
+    if (didSubmitSuccesfully) {
+      alert('contact added!');
+      setDidSubmit(false);
+      setEmail('');
+      setPhone('');
+      setBusinessId('');
+      setBusiness('');
+      setName('');
+    }
+  }, [didSubmitSuccesfully]);
 
   return (
     <Layout>
@@ -80,13 +159,17 @@ const Landing = () => {
               Op restaurant of café? Laat je gegevens <strong>veilig</strong>{' '}
               achter en draag je steentje bij om Covid-19 in te perken!
             </h2>
-            <Form>
+            <Form onSubmit={onSubmit}>
               <Form.Field>
                 <Form.Label htmlFor="naam">Naam</Form.Label>
                 <Form.Input
                   id="naam"
                   name="naam"
                   onFocus={() => setEnableAutocomplete(false)}
+                  value={name}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setName(e.target.value)
+                  }
                 />
               </Form.Field>
               <Form.Field>
@@ -96,6 +179,10 @@ const Landing = () => {
                   name="email"
                   type="email"
                   onFocus={() => setEnableAutocomplete(false)}
+                  value={email}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setEmail(e.target.value)
+                  }
                 />
               </Form.Field>
               <Form.Field>
@@ -105,11 +192,22 @@ const Landing = () => {
                   name="phone"
                   type="text"
                   onFocus={() => setEnableAutocomplete(false)}
+                  value={phone}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setPhone(e.target.value)
+                  }
                 />
               </Form.Field>
               <Form.Field>
                 <Form.Label htmlFor="business">Zaak</Form.Label>
                 <div className={styles.autocompleteInput}>
+                  <div
+                    className={cx({
+                      [styles.indicator]: true,
+                      [styles.progress]: !businessId && business,
+                      [styles.success]: businessId,
+                    })}
+                  />
                   <Form.Input
                     id="business"
                     name="business"
@@ -153,7 +251,9 @@ const Landing = () => {
                 )}
               </Form.Field>
               <Form.Field>
-                <Form.Button type="submit">Opslaan</Form.Button>
+                <Form.Button type="submit" isLoading={addContactLoading}>
+                  Opslaan
+                </Form.Button>
               </Form.Field>
 
               <div className={styles.formDisclaimer}>

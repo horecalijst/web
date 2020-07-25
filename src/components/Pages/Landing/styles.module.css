@@ -59,6 +59,28 @@
     }
   }
 
+  .autocompleteInput {
+    @apply relative;
+
+    .indicator {
+      @apply absolute;
+      @apply rounded;
+      @apply bg-gray-300;
+      width: 6px;
+      height: 6px;
+      top: 0.45em;
+      right: 0.4em;
+
+      &.success {
+        @apply bg-green-500;
+      }
+
+      &.progress {
+        @apply bg-orange-400;
+      }
+    }
+  }
+
   .autocomplete {
     @apply relative;
     @apply left-0 right-0;
