@@ -1,6 +1,8 @@
 .businessDashboard {
   .heading {
     @apply flex items-end;
+    @apply border-b border-gray-200;
+    @apply pb-4;
 
     h2 {
       font-family: 'Roboto Slab', serif;

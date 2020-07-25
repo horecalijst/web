@@ -60,8 +60,8 @@ const Business = () => {
   return (
     <Layout>
       <Meta title="Zakelijk" />
-      <Header />
-      <Layout.Content>
+      <Header withBackground={!!user} />
+      <Layout.Content fullWidth={!!user}>
         <div className={styles.business}>
           {user && <BusinessDashboard />}
           {!user && (

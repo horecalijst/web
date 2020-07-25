@@ -5,6 +5,11 @@
   @apply flex-1;
   max-width: var(--container-width);
 
+  &.fullWidth {
+    @apply max-w-full;
+    @apply pt-8;
+  }
+
   @media (max-width: 640px) {
     @apply py-4 px-6;
   }

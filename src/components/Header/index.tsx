@@ -1,10 +1,20 @@
+import cx from 'classnames';
 import Link from 'next/link';
 import React from 'react';
 
 import styles from './styles.module.css';
 
-const Header = () => (
-  <header className={styles.header}>
+interface Props {
+  withBackground?: boolean;
+}
+
+const Header = ({ withBackground }: Props = { withBackground: false }) => (
+  <header
+    className={cx({
+      [styles.header]: true,
+      [styles.withBackground]: withBackground,
+    })}
+  >
     <Link href="/">
       <a className={styles.logo}>
         <img src="/static/icon.svg" alt="" />
