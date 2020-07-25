@@ -49,6 +49,7 @@ const Business = () => {
     if (didSubmitSuccesfully) {
       alert('We hebben jou een mailtje gestuurd! Hiermee kan je inloggen.');
 
+      setEmail('');
       setDidSubmit(false);
     }
   }, [didSubmitSuccesfully]);
