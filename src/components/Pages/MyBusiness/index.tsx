@@ -7,21 +7,17 @@ import React from 'react';
 
 import styles from './styles.module.css';
 
-const Error = () => (
+const MyBusiness = () => (
   <Layout>
     <Meta title="Mijn zaak" />
     <Header />
     <Layout.Content>
       <div className={styles.myBusiness}>
         <h2>Mijn zaak</h2>
-        <p>U bent restauranthouder of werkt elders in de horeca? Leuk!</p>
         <p>
-          Jammer genoeg zijn de voorbije maanden niet makkelijk geweest. De
-          bijkomende coronamaatregelen zoals het bijhouden (en het vernietigen)
-          van contactgegevens van klanten daar bovenop maken het er ook niet
-          eenvoudiger op.
+          Meld je aan en probeer het gratis. Eens u bent aangemeld kan u 1 of
+          meerdere zaken toevoegen.
         </p>
-        <p>[...]</p>
         <br />
         <Form className={styles.form}>
           <Form.Field>
@@ -38,4 +34,4 @@ const Error = () => (
   </Layout>
 );
 
-export default Error;
+export default MyBusiness;
