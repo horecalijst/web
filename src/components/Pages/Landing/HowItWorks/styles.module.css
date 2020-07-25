@@ -14,4 +14,27 @@
   p + p {
     @apply mt-4;
   }
+
+  .cta {
+    @apply text-center;
+    @apply mt-10;
+
+    a {
+      @apply cursor-pointer;
+      @apply font-semibold;
+      @apply py-3 px-4;
+      @apply leading-snug;
+      @apply rounded;
+      @apply inline-flex;
+      @apply items-center;
+      @apply no-underline;
+      @apply text-white;
+      @apply bg-indigo-500;
+      @apply transition ease-in-out duration-150;
+
+      &:hover {
+        @apply bg-indigo-600;
+      }
+    }
+  }
 }

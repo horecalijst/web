@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 import styles from './styles.module.css';
@@ -23,6 +24,12 @@ const HowItWorks = () => (
       principe. Wanneer u gecontacteerd zou worden door een contacttracing
       center kan u hen deze gegevens overhandigen via deze tool.
     </p>
+
+    <div className={styles.cta}>
+      <Link href="/mijn-zaak">
+        <a>Probeer het gratis!</a>
+      </Link>
+    </div>
   </div>
 );
 
