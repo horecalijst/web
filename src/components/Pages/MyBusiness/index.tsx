@@ -15,8 +15,8 @@ const MyBusiness = () => (
       <div className={styles.myBusiness}>
         <h2>Mijn zaak</h2>
         <p>
-          Meld je aan en probeer het gratis. Eens u bent aangemeld kan u 1 of
-          meerdere zaken toevoegen.
+          Meld je aan en probeer het nu gratis. Eens u bent aangemeld kan u 1 of
+          meerdere zaken toevoegen &amp; beheren.
         </p>
         <br />
         <Form className={styles.form}>
