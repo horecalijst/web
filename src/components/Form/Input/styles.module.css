@@ -9,6 +9,15 @@
   @apply leading-snug;
   @apply transition ease-in-out duration-150;
 
+  &[readonly] {
+    @apply bg-gray-100;
+    @apply cursor-not-allowed;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
   &.error {
     @apply border-red-700;
   }
