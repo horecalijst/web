@@ -28,23 +28,34 @@
   }
 
   form {
-    @apply m-16 mt-12 mb-8;
+    @apply m-24 mt-12 mb-8;
+    @apply relative;
+
+    .formDisclaimer {
+      @apply absolute;
+      top: -10px;
+      right: -300px;
+      max-width: 270px;
+    }
+
+    .formBottomDisclaimer {
+      @apply hidden;
+    }
+
+    @media (max-width: 1024px) {
+      @apply mx-20;
+
+      .formDisclaimer {
+        @apply hidden;
+      }
+
+      .formBottomDisclaimer {
+        @apply block;
+      }
+    }
 
     @media (max-width: 640px) {
       @apply mx-0 mt-8;
-    }
-  }
-
-  .disclaimer {
-    @apply mt-10;
-    @apply p-4;
-    @apply rounded;
-    @apply bg-gray-100;
-    @apply border border-gray-200;
-    @apply text-sm;
-
-    strong {
-      @apply font-semibold;
     }
   }
 }

@@ -6,6 +6,7 @@ import Meta from 'components/Meta';
 import React from 'react';
 
 import HowItWorks from './HowItWorks';
+import PrivacyDisclaimer from './PrivacyDisclaimer';
 import styles from './styles.module.css';
 
 const Landing = () => (
@@ -43,14 +44,12 @@ const Landing = () => (
               <Form.Button type="submit">Opslaan</Form.Button>
             </Form.Field>
 
-            <div className={styles.disclaimer}>
-              ⚠️ Privacy is belangrijk, dat vinden wij ook. Uw gegevens worden
-              op een veilige manier bijgehouden en zijn enkel toegangkelijk voor
-              autoriteiten op verzoek.{' '}
-              <strong>
-                Na 14 dagen worden deze gegevens ook weer automatisch
-                verwijderd.
-              </strong>
+            <div className={styles.formDisclaimer}>
+              <PrivacyDisclaimer />
+            </div>
+
+            <div className={styles.formBottomDisclaimer}>
+              <PrivacyDisclaimer />
             </div>
           </Form>
         </div>

@@ -1,0 +1,12 @@
+.privacyDisclaimer {
+  @apply mt-10;
+  @apply p-4;
+  @apply rounded;
+  @apply bg-gray-100;
+  @apply border border-gray-200;
+  @apply text-sm;
+
+  strong {
+    @apply font-semibold;
+  }
+}
