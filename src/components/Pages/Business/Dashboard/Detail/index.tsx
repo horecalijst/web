@@ -46,9 +46,7 @@ const BusinessDetail = () => {
             return (
               <a
                 key={`contact-export-${index}`}
-                onClick={() =>
-                  alert('Deze functionaliteit komt binnenkort beschikbaar.')
-                }
+                href={`/api/business/${business.id}/export?date=${time}`}
               >
                 export {format(date, 'd MMMM yyyy', { locale })}
                 <br />({contacts} {contacts === 1 ? 'contact' : 'contacten'})
