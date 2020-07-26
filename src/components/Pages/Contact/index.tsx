@@ -3,7 +3,7 @@ import Header from 'components/Header';
 import Layout from 'components/Layout';
 import Meta from 'components/Meta';
 import React from 'react';
-import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
 
 import styles from './styles.module.css';
 
@@ -18,12 +18,9 @@ const Contact = () => (
 
         <div className={styles.info}>
           <div>
-            <strong className={styles.item}>Wouter De Schuyter</strong>
             <div className={styles.item}>
-              <FaEnvelope /> info@horecalijst.be
-            </div>
-            <div className={styles.item}>
-              <FaPhoneAlt /> +32 479 22 82 10
+              <FaEnvelope />{' '}
+              <a href="mailto:info@horecalijst.be">info@horecalijst.be</a>
             </div>
           </div>
         </div>
