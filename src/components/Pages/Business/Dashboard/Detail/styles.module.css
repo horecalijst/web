@@ -2,7 +2,33 @@
   h4 {
     @apply -mt-3;
     @apply text-gray-600 text-base font-medium;
-    @apply leading-tight;
+  }
+
+  h3 {
+    @apply flex items-center;
+  }
+
+  .status {
+    @apply mt-1;
+    @apply ml-3;
+    @apply px-2 py-1;
+    @apply inline-block;
+    @apply text-xs leading-tight font-semibold;
+    @apply rounded;
+    @apply uppercase;
+    @apply text-gray-700 bg-gray-100;
+
+    &.trial {
+      @apply text-blue-700 bg-blue-100;
+    }
+
+    &.active {
+      @apply text-green-700 bg-green-100;
+    }
+
+    &.expired {
+      @apply text-orange-700 bg-orange-100;
+    }
   }
 
   .exportButtons {
@@ -32,9 +58,10 @@
     }
   }
 
-  .trial {
+  .notice {
     @apply mt-8;
-    @apply p-4;
+    @apply p-3;
+    @apply text-sm;
     @apply border border-gray-200;
     @apply rounded;
     @apply bg-gray-100;

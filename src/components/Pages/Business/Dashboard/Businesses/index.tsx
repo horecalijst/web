@@ -87,7 +87,9 @@ const Businesses = () => {
                               [styles.active]: business.status === 'ACTIVE',
                             })}
                           >
-                            {business.status}
+                            {business.status === 'TRIAL' && 'Proefperiode'}
+                            {business.status === 'EXPIRED' && 'Verlopen'}
+                            {business.status === 'ACTIVE' && 'Actief'}
                           </span>
                         </td>
                         <td>

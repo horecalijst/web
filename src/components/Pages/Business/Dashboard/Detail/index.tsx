@@ -1,4 +1,5 @@
 import { gql, useQuery } from '@apollo/client';
+import cx from 'classnames';
 import { format } from 'date-fns';
 import { nl as locale } from 'date-fns/locale';
 import { useRouter } from 'next/router';
@@ -18,6 +19,8 @@ const BusinessDetail = () => {
           address
           country
           vat
+          daysLeft
+          status
           numberOfContactsToday
           numberOfContactsTotal
           numberOfContactsByDate
@@ -36,7 +39,22 @@ const BusinessDetail = () => {
 
   return (
     <div className={styles.businessDetail}>
-      <h3>{business.name}</h3>
+      <h3>
+        {business.name}
+
+        <span
+          className={cx({
+            [styles.status]: true,
+            [styles.expired]: business.status === 'EXPIRED',
+            [styles.trial]: business.status === 'TRIAL',
+            [styles.active]: business.status === 'ACTIVE',
+          })}
+        >
+          {business.status === 'TRIAL' && 'Proefperiode'}
+          {business.status === 'EXPIRED' && 'Verlopen'}
+          {business.status === 'ACTIVE' && 'Actief'}
+        </span>
+      </h3>
       <h4>{business.address}</h4>
       <div className={styles.exportButtons}>
         {Object.entries(business.numberOfContactsByDate).map(
@@ -55,11 +73,34 @@ const BusinessDetail = () => {
           },
         )}
       </div>
-      <div className={styles.trial}>
-        ⚠️ U zit momenteel in een gratis proefperiode, deze tool zal
-        uiteindelijk <strong>€9.95/maand</strong> kosten. U zal hier ruim
-        opvoorhand van worden ingelicht zonder enige verplichting.
-      </div>
+      {business.daysLeft < 8 && (
+        <div className={styles.notice}>
+          ⚠️{' '}
+          {business.status === 'EXPIRED' && (
+            <strong>
+              Uw proefperiode zit er op en u hebt geen krediet meer over.
+            </strong>
+          )}
+          {business.status === 'TRIAL' && <>Uw proefperiode loopt af binnen </>}
+          {business.status === 'ACTIVE' && <>Uw zaak heeft nog </>}
+          {business.status !== 'EXPIRED' && (
+            <strong>
+              {business.daysLeft} {business.daysLeft === 1 ? 'dag' : 'dagen'}
+            </strong>
+          )}
+          {business.status === 'ACTIVE' && <> krediet</>}
+          {business.status !== 'EXPIRED' ? <>, u</> : ' U '} kan gebruik blijven
+          maken van deze service door een extra periode bij te kopen. Alle{' '}
+          <strong>aankopen kunnen worden gecumuleerd</strong> met reeds eerdere
+          aankopen en proefperiode.{' '}
+          {business.status !== 'EXPIRED' && (
+            <>
+              Indien u niks doet zal uw horecazaak niet meer selecteerbaar zijn
+              voor klanten, u blijft wel toegang hebben tot uw account en data.
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 };
