@@ -1,5 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 import { useDidMount } from 'beautiful-react-hooks';
+import cx from 'classnames';
 import Table from 'components/Table';
 import Link from 'next/link';
 import React, { useMemo } from 'react';
@@ -12,6 +13,7 @@ type Business = {
   address: string;
   country: string;
   vat: string;
+  status: string;
   numberOfContactsToday: number;
   numberOfContactsTotal: number;
 };
@@ -25,6 +27,7 @@ const Businesses = () => {
         address
         country
         vat
+        status
         numberOfContactsToday
         numberOfContactsTotal
       }
@@ -76,7 +79,16 @@ const Businesses = () => {
                         <td>{business.name}</td>
                         <td>{business.address}</td>
                         <td>
-                          <span className={styles.status}>trial</span>
+                          <span
+                            className={cx({
+                              [styles.status]: true,
+                              [styles.expired]: business.status === 'EXPIRED',
+                              [styles.trial]: business.status === 'TRIAL',
+                              [styles.active]: business.status === 'ACTIVE',
+                            })}
+                          >
+                            {business.status}
+                          </span>
                         </td>
                         <td>
                           {business.numberOfContactsTotal}
