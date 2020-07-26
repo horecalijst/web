@@ -58,7 +58,6 @@ const Businesses = () => {
                   <th>Adres</th>
                   <th>Status</th>
                   <th>Contacten</th>
-                  <th>Data exporteren</th>
                 </tr>
               </thead>
               <tbody>
@@ -86,16 +85,6 @@ const Businesses = () => {
                           {business.numberOfContactsToday
                             ? ` (${business.numberOfContactsToday} vandaag)`
                             : ''}
-                        </td>
-                        <td>
-                          <Link
-                            href="/zakelijk/[id]"
-                            as={`/zakelijk/${business.id}`}
-                          >
-                            <a className={styles.dataExportButton}>
-                              Exporteer data
-                            </a>
-                          </Link>
                         </td>
                       </tr>
                     </Link>
