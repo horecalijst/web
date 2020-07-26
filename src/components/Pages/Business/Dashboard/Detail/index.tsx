@@ -57,7 +57,7 @@ const BusinessDetail = () => {
       </div>
       <div className={styles.trial}>
         ⚠️ U zit momenteel in een gratis proefperiode, deze tool zal
-        uiteindelijk <strong>€10/maand</strong> kosten per zaak. U zal hier ruim
+        uiteindelijk <strong>€9.95/maand</strong> kosten. U zal hier ruim
         opvoorhand van worden ingelicht zonder enige verplichting.
       </div>
     </div>

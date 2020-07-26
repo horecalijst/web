@@ -9,7 +9,7 @@ const HowItWorks = () => (
     <p>
       Voor u als horeca-uitbater is het bijhouden van de contactgegevens van uw
       klanten de nieuwste in een steeds langer wordende lijst van
-      coronamaatregelen. Voor slechts <strong>€10 per maand</strong> verzorgt
+      coronamaatregelen. Voor slechts <strong>€9.95 per maand</strong> verzorgt
       Horecalijst de correcte registratie, opslag (én automatische vernietiging)
       van de klantgegevens.
     </p>
