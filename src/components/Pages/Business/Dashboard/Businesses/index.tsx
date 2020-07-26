@@ -6,20 +6,6 @@ import React, { useMemo } from 'react';
 
 import styles from './styles.module.css';
 
-const BUSINESSES = gql`
-  query {
-    businesses {
-      id
-      name
-      address
-      country
-      vat
-      numberOfContactsToday
-      numberOfContactsTotal
-    }
-  }
-`;
-
 type Business = {
   id: string;
   name: string;
@@ -31,7 +17,19 @@ type Business = {
 };
 
 const Businesses = () => {
-  const { data: businessesData, refetch } = useQuery(BUSINESSES);
+  const { data: businessesData, refetch } = useQuery(gql`
+    query {
+      businesses {
+        id
+        name
+        address
+        country
+        vat
+        numberOfContactsToday
+        numberOfContactsTotal
+      }
+    }
+  `);
   const businesses = useMemo(() => {
     if (!businessesData?.businesses) {
       return [];
