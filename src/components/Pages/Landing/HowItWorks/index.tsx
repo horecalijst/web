@@ -11,7 +11,7 @@ const HowItWorks = () => (
       klanten de nieuwste in een steeds langer wordende lijst van
       coronamaatregelen. Voor slechts <strong>€10 per maand</strong> verzorgt
       Horecalijst de correcte registratie, opslag (én automatische vernietiging)
-      van de klantengegevens.
+      van de klantgegevens.
     </p>
     <p>
       U vraagt uw klanten bij het binnenkomen hun gegevens in te vullen bij
