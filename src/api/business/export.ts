@@ -49,6 +49,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       ]);
     }
 
+    if (data.contacts.length === 0) {
+      stream.write([]);
+    }
+
     const formattedDate = formatDate(
       new Date(parseInt(`${date}`)),
       'yyyy-MM-dd',
