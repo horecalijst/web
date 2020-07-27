@@ -56,6 +56,39 @@ const Privacy = () => (
           </Link>
           .
         </p>
+        <div className={styles.corona}>
+          <h3>Klantgegevens coronamaatregelen</h3>
+
+          <p>
+            De Nationale Veiligheidsraad heeft op 23 juli 2020 beslist dat
+            horecazaken de aanwezigheid van hun gasten moeten noteren. We
+            verwerken je gegevens, direct in opdracht van de overheid, en in
+            lijn met de beslissing van de Nationale Veiligheidsraad, op grond
+            van artikel 6, c (&ldquo;noodzakelijke verwerking om te voldoen aan
+            een wettelijke verplichting die op de verwerkingsverantwoordelijke
+            rust&rdquo;) en artikel 3, 10° Ministerieel besluit van 24 juli 2020
+            houdende wijziging van het ministerieel besluit van 30 juni 2020
+            houdende dringende maatregelen om de verspreiding van het
+            coronavirus COVID-19 te beperken.
+          </p>
+          <p>
+            Horecalijst houdt uw gegevens maximaal 14 dagen bij vanaf het moment
+            dat u ze in gaf. Daarna worden ze vernietigd en onbruikbaar gemaakt.
+            De zaak die u opgaf bij de registratie heeft gedurende 14 dagen
+            toegang tot deze gegevens in de vorm van een CSV-bestand zodat ze
+            deze kan overhandigen aan autoriteiten op aanvraag.
+          </p>
+          <p>
+            Horecalijst is een digitaal equivalent van{' '}
+            <a
+              href="/static/formulaire-horeca-formulier-vlaanderen.pdf"
+              target="_blank"
+            >
+              het formulier
+            </a>{' '}
+            dat de overheid heeft opgesteld voor de horeca.
+          </p>
+        </div>
         <p className={styles.note}>Laatst bijgewerkt op 27 juli 2020.</p>
       </div>
     </Layout.Content>

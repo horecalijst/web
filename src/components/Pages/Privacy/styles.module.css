@@ -42,4 +42,11 @@
   .note {
     @apply text-sm text-gray-500;
   }
+
+  .corona {
+    @apply rounded-lg;
+    @apply bg-gray-100;
+    @apply py-6 px-8;
+    @apply mt-6 mb-8;
+  }
 }
