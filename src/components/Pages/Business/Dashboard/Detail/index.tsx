@@ -192,7 +192,7 @@ const BusinessDetail = () => {
             }
           >
             {products.length === 0 ? (
-              <option>Producten laden...</option>
+              <option disabled>Producten laden...</option>
             ) : (
               products.map((product: Product, index: number) => (
                 <option key={`product-${index}`} value={product.id}>

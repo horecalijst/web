@@ -143,6 +143,7 @@ const AddBusiness = () => {
               type="text"
               maxLength={12}
               value={vatNumber}
+              placeholder="BTW-nummer van zaak"
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 setVatNumber(e.target.value)
               }
@@ -160,6 +161,7 @@ const AddBusiness = () => {
                 id="name"
                 name="name"
                 type="text"
+                placeholder="Naam van zaak"
                 value={name}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   setName(e.target.value)
@@ -175,6 +177,7 @@ const AddBusiness = () => {
                 id="address"
                 name="address"
                 type="text"
+                placeholder="Adres van zaak"
                 value={address}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   setAddress(e.target.value)

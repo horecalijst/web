@@ -197,6 +197,7 @@ const Landing = () => {
                 <Form.Input
                   id="naam"
                   name="naam"
+                  placeholder="Jouw naam"
                   onFocus={() => setEnableAutocomplete(false)}
                   value={name}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -205,11 +206,12 @@ const Landing = () => {
                 />
               </Form.Field>
               <Form.Field>
-                <Form.Label htmlFor="email">Email</Form.Label>
+                <Form.Label htmlFor="email">E-mailadres</Form.Label>
                 <Form.Input
                   id="email"
                   name="email"
                   type="email"
+                  placeholder="Jouw e-mailadres"
                   onFocus={() => setEnableAutocomplete(false)}
                   value={email}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -218,11 +220,12 @@ const Landing = () => {
                 />
               </Form.Field>
               <Form.Field>
-                <Form.Label htmlFor="phone">Telefoonnummer</Form.Label>
+                <Form.Label htmlFor="phone">GSM-nummer</Form.Label>
                 <Form.PhoneInput
                   id="phone"
                   name="phone"
                   type="text"
+                  placeholder="Jouw GSM-nummer"
                   onFocus={onPhoneFocus}
                   value={phone}
                   onBlur={onPhoneBlur}
@@ -245,6 +248,7 @@ const Landing = () => {
                     id="business"
                     name="business"
                     type="text"
+                    placeholder="Naam van aangesloten zaak"
                     value={business}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
                       setBusiness(e.target.value)

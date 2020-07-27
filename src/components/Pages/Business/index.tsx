@@ -77,11 +77,12 @@ const Business = () => {
               <br />
               <Form className={styles.form} onSubmit={onSubmit}>
                 <Form.Field>
-                  <Form.Label htmlFor="email">Email</Form.Label>
+                  <Form.Label htmlFor="email">E-mailadres</Form.Label>
                   <Form.Input
                     id="email"
                     name="email"
                     type="email"
+                    placeholder="Jouw e-mailadres"
                     value={email}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
                       setEmail(e.target.value)
