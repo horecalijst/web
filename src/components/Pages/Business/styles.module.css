@@ -25,4 +25,14 @@
   .form {
     max-width: 420px;
   }
+
+  .notice {
+    @apply mt-6;
+    @apply p-3;
+    @apply border border-gray-200;
+    @apply rounded;
+    @apply bg-gray-100;
+    @apply inline-block;
+    @apply text-sm;
+  }
 }

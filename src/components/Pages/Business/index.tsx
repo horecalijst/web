@@ -4,6 +4,7 @@ import Form from 'components/Form';
 import Header from 'components/Header';
 import Layout from 'components/Layout';
 import Meta from 'components/Meta';
+import Twemoji from 'components/Twemoji';
 import { useUser } from 'data/user';
 import React, {
   ChangeEvent,
@@ -93,6 +94,15 @@ const Business = () => {
                   </Form.Button>
                 </Form.Field>
               </Form>
+              <Twemoji>
+                <div className={styles.notice}>
+                  ⚠️ U kan deze tool vrijblijvend 1 week gratis uit proberen,{' '}
+                  <strong>
+                    geen verplichtingen of stilzwijgende verlengingen
+                  </strong>
+                  .
+                </div>
+              </Twemoji>
             </>
           )}
         </div>
