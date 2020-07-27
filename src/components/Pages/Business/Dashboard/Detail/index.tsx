@@ -1,11 +1,18 @@
-import { gql, useQuery } from '@apollo/client';
+import { gql, useMutation, useQuery } from '@apollo/client';
 import cx from 'classnames';
 import Form from 'components/Form';
 import Twemoji from 'components/Twemoji';
 import { format } from 'date-fns';
 import { nl as locale } from 'date-fns/locale';
 import { useRouter } from 'next/router';
-import React, { useMemo } from 'react';
+import React, {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 
 import styles from './styles.module.css';
 
@@ -50,14 +57,59 @@ const BusinessDetail = () => {
       }
     `,
   );
+  const [
+    createOrder,
+    { loading: loadingOrder, data: dataOrder },
+  ] = useMutation(gql`
+    mutation vatLookup($businessId: String!, $productId: String!) {
+      createOrder(businessId: $businessId, productId: $productId) {
+        externalPaymentLink
+      }
+    }
+  `);
+  const [didSubmit, setDidSubmit] = useState(false);
+  const [productId, setProductId] = useState('');
+
+  const onSubmit = useCallback(
+    (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+
+      setDidSubmit(true);
+
+      createOrder({ variables: { businessId: id, productId } }).catch(() => {
+        alert('Er ging iets mis, probeer het later eens opnieuw.');
+        setDidSubmit(false);
+      });
+    },
+    [createOrder, id, productId],
+  );
 
   const products = useMemo(() => {
     return productData?.products || [];
   }, [productData?.products]);
 
+  useEffect(() => {
+    if (products.length && !productId) {
+      setProductId(products[0].id);
+    }
+  }, [productId, products]);
+
   const business = useMemo(() => {
     return businessData?.business || null;
   }, [businessData?.business]);
+
+  useEffect(() => {
+    if (dataOrder?.createOrder?.externalPaymentLink) {
+      setDidSubmit(false);
+      const win = window.open(
+        dataOrder?.createOrder?.externalPaymentLink,
+        '_blank',
+      );
+      if (win) {
+        win.focus();
+      }
+    }
+  }, [dataOrder]);
 
   if (!business?.id) {
     return null;
@@ -99,42 +151,46 @@ const BusinessDetail = () => {
           },
         )}
       </div>
-      {business.daysLeft < 8 && (
-        <Twemoji>
-          <div className={styles.notice}>
-            ⚠️{' '}
-            {business.status === 'EXPIRED' && (
-              <strong>
-                Uw proefperiode zit er op en u hebt geen krediet meer over.
-              </strong>
-            )}
-            {business.status === 'TRIAL' && (
-              <>Uw proefperiode loopt af binnen </>
-            )}
-            {business.status === 'ACTIVE' && <>Uw zaak heeft nog </>}
-            {business.status !== 'EXPIRED' && (
-              <strong>
-                {business.daysLeft} {business.daysLeft === 1 ? 'dag' : 'dagen'}
-              </strong>
-            )}
-            {business.status === 'ACTIVE' && <> krediet</>}
-            {business.status !== 'EXPIRED' ? <>, u</> : ' U '} kan gebruik
-            blijven maken van deze service door een extra periode bij te kopen.
-            Alle <strong>aankopen kunnen worden gecumuleerd</strong> met reeds
-            eerdere aankopen en proefperiode.{' '}
-            {business.status !== 'EXPIRED' && (
-              <>
-                Indien u niks doet zal uw horecazaak niet meer selecteerbaar
-                zijn voor klanten, u blijft wel toegang hebben tot uw account en
-                data.
-              </>
-            )}
-          </div>
-        </Twemoji>
-      )}
-      <Form className={styles.buyProduct}>
+      <Twemoji>
+        <div className={styles.notice}>
+          ⚠️{' '}
+          {business.status === 'EXPIRED' && (
+            <strong>
+              Uw proefperiode zit erop en u hebt geen krediet meer over.
+            </strong>
+          )}
+          {business.status === 'TRIAL' && <>Uw proefperiode loopt af binnen </>}
+          {business.status === 'ACTIVE' && <>Uw zaak heeft nog </>}
+          {business.status !== 'EXPIRED' && (
+            <strong>
+              {business.daysLeft} {business.daysLeft === 1 ? 'dag' : 'dagen'}
+            </strong>
+          )}
+          {business.status === 'ACTIVE' && <> krediet.</>}
+          {business.status !== 'ACTIVE' && (
+            <>
+              {business.status !== 'EXPIRED' ? <>, u</> : ' U '} kan gebruik
+              blijven maken van deze service door een extra periode bij te
+              kopen.
+            </>
+          )}{' '}
+          Alle <strong>aankopen kunnen worden gecumuleerd</strong> met reeds
+          eerdere aankopen en proefperiode.{' '}
+          {business.status !== 'EXPIRED' && business.status !== 'ACTIVE' && (
+            <>
+              Indien u niks doet zal uw horecazaak niet meer selecteerbaar zijn
+              voor klanten, u blijft wel toegang hebben tot uw account en data.
+            </>
+          )}
+        </div>
+      </Twemoji>
+      <Form className={styles.buyProduct} onSubmit={onSubmit}>
         <div className={styles.select}>
-          <Form.Select>
+          <Form.Select
+            onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+              setProductId(e.target.value)
+            }
+          >
             {products.length === 0 ? (
               <option>Producten laden...</option>
             ) : (
@@ -146,7 +202,9 @@ const BusinessDetail = () => {
             )}
           </Form.Select>
         </div>
-        <Form.Button isLoading={productsLoading}>Afrekenen</Form.Button>
+        <Form.Button isLoading={productsLoading || loadingOrder || didSubmit}>
+          Afrekenen
+        </Form.Button>
       </Form>
     </div>
   );
