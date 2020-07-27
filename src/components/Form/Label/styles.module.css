@@ -1,7 +1,7 @@
 .label {
   @apply block;
-  @apply text-gray-700 text-base;
-  @apply font-semibold;
+  @apply text-gray-700;
+  @apply font-medium;
   @apply mb-2;
   @apply leading-snug;
 
