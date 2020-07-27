@@ -1,0 +1,33 @@
+.select {
+  @apply bg-white;
+  @apply border;
+  @apply rounded;
+  @apply transition ease-in-out duration-150;
+  @apply relative;
+  @apply overflow-hidden;
+
+  select {
+    @apply text-base font-medium;
+    @apply py-2 px-3;
+    @apply appearance-none;
+    @apply leading-snug;
+    @apply w-full;
+
+    &:focus {
+      @apply border-gray-400;
+      @apply outline-none;
+    }
+  }
+
+  svg {
+    @apply absolute;
+    @apply pointer-events-none;
+    @apply text-gray-600;
+    top: 0.7em;
+    right: 0.5em;
+  }
+
+  &.error {
+    @apply border-red-700;
+  }
+}
