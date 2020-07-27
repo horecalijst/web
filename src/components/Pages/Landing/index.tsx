@@ -151,6 +151,20 @@ const Landing = () => {
     setContactId('');
   };
 
+  const onPhoneFocus = useCallback(() => {
+    setEnableAutocomplete(false);
+
+    if (phone.length === 0) {
+      setPhone('+32');
+    }
+  }, [phone.length]);
+
+  const onPhoneBlur = useCallback(() => {
+    if (phone.length <= 4) {
+      setPhone('');
+    }
+  }, [phone]);
+
   return (
     <Layout hideOverflow={!!contactId}>
       <Meta
@@ -205,12 +219,13 @@ const Landing = () => {
               </Form.Field>
               <Form.Field>
                 <Form.Label htmlFor="phone">Telefoonnummer</Form.Label>
-                <Form.Input
+                <Form.PhoneInput
                   id="phone"
                   name="phone"
                   type="text"
-                  onFocus={() => setEnableAutocomplete(false)}
+                  onFocus={onPhoneFocus}
                   value={phone}
+                  onBlur={onPhoneBlur}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     setPhone(e.target.value)
                   }
