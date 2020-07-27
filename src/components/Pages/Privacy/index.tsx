@@ -42,13 +42,6 @@ const Privacy = () => (
           vermeldt.
         </p>
         <p>
-          Onze website kan links bevatten naar externe sites die niet door ons
-          worden beheerd. We maken u er via deze weg op attent dat we geen
-          controle hebben over de inhoud en praktijken van deze sites. We zijn
-          dus niet verantwoordelijk, noch aansprakelijk, voor hun respectieve
-          privacy-overeenkomsten.
-        </p>
-        <p>
           U bent vrij om te weigeren in te gaan op ons verzoek naar bepaalde
           persoonlijke gegevens, met dien verstande dat wij dan mogelijks niet
           kunnen voldoen aan bepaalde aspecten van onze dienstverlening.
@@ -63,7 +56,7 @@ const Privacy = () => (
           </Link>
           .
         </p>
-        <p className={styles.note}>Laatst bijgewerkt op 25 juli 2020.</p>
+        <p className={styles.note}>Laatst bijgewerkt op 27 juli 2020.</p>
       </div>
     </Layout.Content>
     <Footer />

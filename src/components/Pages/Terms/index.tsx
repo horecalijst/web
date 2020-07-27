@@ -107,30 +107,21 @@ const Terms = () => (
           voorafgaande verwittiging. Horecalijst is echter niet verplicht tot
           het updaten van deze materialen.
         </p>
-        <h3>6. Links</h3>
-        <p>
-          Horecalijst heeft niet alle websites beoordeeld die linken naar
-          Horecalijst&#x27;s website of waar op Horecalijst&#x27;s website naar
-          wordt gelinkt en is niet verantwoordelijk voor de inhoud van
-          dergelijke sites. De insluiting van dergelijke links impliceert geen
-          goedkeuring van de gelinkte sites door Horecalijst. Gebruik van
-          dergelijke gelinkte websites is op eigen risico van de gebruiker.
-        </p>
-        <h3>7. Wijzigingen</h3>
+        <h3>6. Wijzigingen</h3>
         <p>
           Horecalijst kan de gebruiksvoorwaarden van deze website op elk moment
           wijzigen of herzien zonder voorafgaande verwittiging. Door het gebruik
           van deze website stemt u ermee in gebonden te zijn door de op dat
           moment geldende versie van deze gebruiksvoorwaarden.
         </p>
-        <h3>8. Toepasselijk recht</h3>
+        <h3>7. Toepasselijk recht</h3>
         <p>
           Deze gebruiksvoorwaarden worden aangevoerd door en geïnterpreteerd in
           overeenstemming met de Belgische wet en u onderwerpt zich
           onherroepelijk aan de exclusieve bevoegdheid van de rechtbanken in die
           staat of op die locatie.
         </p>
-        <p className={styles.note}>Laatst bijgewerkt op 25 juli 2020.</p>
+        <p className={styles.note}>Laatst bijgewerkt op 27 juli 2020.</p>
       </div>
     </Layout.Content>
     <Footer />
