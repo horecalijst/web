@@ -93,7 +93,7 @@ const AddBusiness = () => {
   }, [didSubmitSuccesfully, loadingAddBusiness, loadingVatLookup]);
 
   useEffect(() => {
-    if (didSubmitSuccesfully && !loadingVatLookup) {
+    if (didSubmitSuccesfully && !loadingVatLookup && !freezeLookup) {
       if (dataVatLookup?.vatLookup?.valid) {
         setVatNumber(dataVatLookup?.vatLookup?.vatNumber);
         setName(dataVatLookup?.vatLookup?.name);
@@ -111,6 +111,7 @@ const AddBusiness = () => {
     dataVatLookup?.vatLookup?.valid,
     dataVatLookup?.vatLookup?.vatNumber,
     didSubmitSuccesfully,
+    freezeLookup,
     loadingVatLookup,
   ]);
 
