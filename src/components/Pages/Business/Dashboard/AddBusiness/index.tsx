@@ -1,5 +1,6 @@
 import { gql, useMutation } from '@apollo/client';
 import Form from 'components/Form';
+import Twemoji from 'components/Twemoji';
 import { useRouter } from 'next/router';
 import React, {
   ChangeEvent,
@@ -195,6 +196,12 @@ const AddBusiness = () => {
           </Form.Button>
         </Form.Field>
       </Form>
+      <Twemoji>
+        <div className={styles.notice}>
+          ⚠️ U kan deze tool vrijblijvend 1 week gratis uit proberen,{' '}
+          <strong>geen verplichtingen of stilzwijgende verlengingen</strong>.
+        </div>
+      </Twemoji>
     </div>
   );
 };

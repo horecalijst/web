@@ -1,8 +1,20 @@
 .addBusiness {
-  max-width: 360px;
+  form {
+    max-width: 360px;
+  }
 
   .note {
     @apply text-gray-500 text-sm;
     @apply leading-tight;
+  }
+
+  .notice {
+    @apply mt-6;
+    @apply p-3;
+    @apply border border-gray-200;
+    @apply rounded;
+    @apply bg-gray-100;
+    @apply inline-block;
+    @apply text-sm;
   }
 }
