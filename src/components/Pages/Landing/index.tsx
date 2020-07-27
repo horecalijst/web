@@ -15,6 +15,8 @@ import React, {
   useState,
 } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import validateEmail from 'validator/lib/isEmail';
+import validatePhone from 'validator/lib/isMobilePhone';
 
 import HowItWorks from './HowItWorks';
 import PrivacyDisclaimer from './PrivacyDisclaimer';
@@ -194,6 +196,7 @@ const Landing = () => {
             <Form onSubmit={onSubmit}>
               <Form.Field>
                 <Form.Label htmlFor="naam">Naam</Form.Label>
+
                 <Form.Input
                   id="naam"
                   name="naam"
@@ -207,36 +210,56 @@ const Landing = () => {
               </Form.Field>
               <Form.Field>
                 <Form.Label htmlFor="email">E-mailadres</Form.Label>
-                <Form.Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Jouw e-mailadres"
-                  onFocus={() => setEnableAutocomplete(false)}
-                  value={email}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    setEmail(e.target.value)
-                  }
-                />
+                <div className={styles.inputWrapper}>
+                  <div
+                    className={cx({
+                      [styles.indicator]: true,
+                      [styles.progress]: email && !validateEmail(email),
+                      [styles.success]: email && validateEmail(email),
+                    })}
+                  />
+                  <Form.Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Jouw e-mailadres"
+                    onFocus={() => setEnableAutocomplete(false)}
+                    value={email}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      setEmail(e.target.value)
+                    }
+                  />
+                </div>
               </Form.Field>
               <Form.Field>
                 <Form.Label htmlFor="phone">GSM-nummer</Form.Label>
-                <Form.PhoneInput
-                  id="phone"
-                  name="phone"
-                  type="text"
-                  placeholder="Jouw GSM-nummer"
-                  onFocus={onPhoneFocus}
-                  value={phone}
-                  onBlur={onPhoneBlur}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    setPhone(e.target.value)
-                  }
-                />
+                <div className={styles.inputWrapper}>
+                  <div
+                    className={cx({
+                      [styles.indicator]: true,
+                      [styles.progress]:
+                        phone && !validatePhone(phone.split(' ').join('')),
+                      [styles.success]:
+                        phone && validatePhone(phone.split(' ').join('')),
+                    })}
+                  />
+                  <Form.PhoneInput
+                    id="phone"
+                    name="phone"
+                    type="text"
+                    placeholder="Jouw GSM-nummer"
+                    onFocus={onPhoneFocus}
+                    value={phone}
+                    onBlur={onPhoneBlur}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      setPhone(e.target.value)
+                    }
+                  />
+                </div>
               </Form.Field>
               <Form.Field>
                 <Form.Label htmlFor="business">Zaak</Form.Label>
-                <div className={styles.autocompleteInput}>
+                <div className={styles.inputWrapper}>
                   <div
                     className={cx({
                       [styles.indicator]: true,
