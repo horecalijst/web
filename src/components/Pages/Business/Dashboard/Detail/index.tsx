@@ -1,5 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 import cx from 'classnames';
+import Form from 'components/Form';
 import Twemoji from 'components/Twemoji';
 import { format } from 'date-fns';
 import { nl as locale } from 'date-fns/locale';
@@ -7,6 +8,13 @@ import { useRouter } from 'next/router';
 import React, { useMemo } from 'react';
 
 import styles from './styles.module.css';
+
+type Product = {
+  id: string;
+  description: string;
+  value: number;
+  currency: string;
+};
 
 const BusinessDetail = () => {
   const { query } = useRouter();
@@ -30,6 +38,23 @@ const BusinessDetail = () => {
     `,
     { variables: { id } },
   );
+  const { data: productData, loading: productsLoading } = useQuery(
+    gql`
+      query {
+        products {
+          id
+          description
+          value
+          currency
+        }
+      }
+    `,
+  );
+
+  const products = useMemo(() => {
+    return productData?.products || [];
+  }, [productData?.products]);
+
   const business = useMemo(() => {
     return businessData?.business || null;
   }, [businessData?.business]);
@@ -107,6 +132,22 @@ const BusinessDetail = () => {
           </div>
         </Twemoji>
       )}
+      <Form className={styles.buyProduct}>
+        <div className={styles.select}>
+          <Form.Select>
+            {products.length === 0 ? (
+              <option>Producten laden...</option>
+            ) : (
+              products.map((product: Product, index: number) => (
+                <option key={`product-${index}`} value={product.id}>
+                  {product.description} ({product.value} {product.currency})
+                </option>
+              ))
+            )}
+          </Form.Select>
+        </div>
+        <Form.Button isLoading={productsLoading}>Afrekenen</Form.Button>
+      </Form>
     </div>
   );
 };

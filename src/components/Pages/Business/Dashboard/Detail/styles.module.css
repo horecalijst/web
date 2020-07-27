@@ -61,10 +61,21 @@
   .notice {
     @apply mt-8;
     @apply p-3;
-    @apply text-sm;
     @apply border border-gray-200;
     @apply rounded;
     @apply bg-gray-100;
     @apply inline-block;
+    @apply text-sm;
+  }
+
+  .buyProduct {
+    @apply mt-4;
+    @apply flex items-center;
+    max-width: 400px;
+
+    .select {
+      @apply flex-1;
+      @apply mr-3;
+    }
   }
 }
