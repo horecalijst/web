@@ -1,7 +1,7 @@
 .button {
   @apply appearance-none;
   @apply cursor-pointer;
-  @apply text-sm font-semibold;
+  @apply font-semibold;
   @apply py-2 px-3;
   @apply rounded;
   @apply inline-flex;
