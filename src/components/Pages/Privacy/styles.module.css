@@ -1,6 +1,16 @@
 .privacy {
   @apply mb-12;
 
+  a {
+    @apply text-gray-800;
+    @apply underline;
+
+    &:hover {
+      @apply text-gray-900;
+      @apply no-underline;
+    }
+  }
+
   h2 {
     font-family: 'Roboto Slab', serif;
     @apply font-medium;

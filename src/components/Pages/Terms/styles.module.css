@@ -8,6 +8,16 @@
     @apply mb-6;
   }
 
+  a {
+    @apply text-gray-800;
+    @apply underline;
+
+    &:hover {
+      @apply text-gray-900;
+      @apply no-underline;
+    }
+  }
+
   h3 {
     @apply font-medium;
     @apply text-2xl;
