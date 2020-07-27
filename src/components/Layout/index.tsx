@@ -1,6 +1,6 @@
 import cx from 'classnames';
+import Twemoji from 'components/Twemoji';
 import React, { ReactNode } from 'react';
-import Twemoji from 'react-twemoji';
 
 import Content from './Content';
 import styles from './styles.module.css';
@@ -14,7 +14,7 @@ const Layout = (props: Props) => {
   const { children, hideOverflow } = props;
 
   return (
-    <Twemoji options={{ className: styles.twemoji }} noWrapper>
+    <Twemoji>
       <div
         className={cx({
           [styles.layout]: true,

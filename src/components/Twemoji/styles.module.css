@@ -1,0 +1,7 @@
+.twemoji {
+  @apply inline-block;
+  height: 1em;
+  width: 1em;
+  vertical-align: -0.15em;
+  margin: 0px 0.05em 0px 0.1em;
+}
