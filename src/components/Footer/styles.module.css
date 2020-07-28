@@ -1,6 +1,5 @@
 .footer {
   @apply text-gray-500;
-  @apply border-t border-gray-200;
   @apply flex;
 
   p {
@@ -24,6 +23,8 @@
 
   @media (max-width: 640px) {
     @apply flex-col;
+    @apply border-t border-gray-200;
+    @apply text-sm;
 
     p {
       @apply pb-0 px-6;
