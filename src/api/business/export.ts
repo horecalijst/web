@@ -50,7 +50,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     if (data.contacts.length === 0) {
-      stream.write([]);
+      stream.write(['no data', 'no data', 'no data', 'no data']);
     }
 
     const formattedDate = formatDate(
