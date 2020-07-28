@@ -238,9 +238,11 @@ const Landing = () => {
                     className={cx({
                       [styles.indicator]: true,
                       [styles.progress]:
-                        phone && !validatePhone(phone.split(' ').join('')),
+                        phone &&
+                        !validatePhone(phone.split(' ').join(''), 'nl-BE'),
                       [styles.success]:
-                        phone && validatePhone(phone.split(' ').join('')),
+                        phone &&
+                        validatePhone(phone.split(' ').join(''), 'nl-BE'),
                     })}
                   />
                   <Form.PhoneInput
