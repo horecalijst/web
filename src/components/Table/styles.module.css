@@ -3,8 +3,10 @@
   @apply inline-block;
   @apply min-w-full;
   @apply overflow-hidden;
+  @apply overflow-x-scroll;
   @apply rounded;
   @apply border border-gray-200;
+  @apply max-w-full;
 
   table {
     @apply min-w-full;
