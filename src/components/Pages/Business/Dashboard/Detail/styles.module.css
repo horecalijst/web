@@ -52,6 +52,11 @@
       @apply w-full;
       max-width: 165px;
 
+      @media (max-width: 480px) {
+        @apply max-w-full;
+        @apply w-full;
+      }
+
       &:hover {
         @apply bg-gray-600;
       }

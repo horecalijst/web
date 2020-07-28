@@ -37,8 +37,11 @@ const BusinessDashboard = () => {
         </Link>
         <div className={styles.spacer} />
         <div>
-          Aangemeld als <strong>{user.email}</strong> (
-          <a onClick={onSignoutClick}>afmelden</a>)
+          <span>
+            Aangemeld als <strong>{user.email}</strong> (
+          </span>
+          <a onClick={onSignoutClick}>afmelden</a>
+          <span>)</span>
         </div>
       </div>
       <div className={styles.content}>

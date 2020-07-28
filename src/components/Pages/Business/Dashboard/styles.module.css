@@ -30,6 +30,12 @@
         @apply text-indigo-600;
       }
     }
+
+    @media (max-width: 640px) {
+      span {
+        @apply hidden;
+      }
+    }
   }
 
   .content {
