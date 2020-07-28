@@ -38,9 +38,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     for (const contact of data.contacts) {
       stream.write([
-        contact.name,
-        contact.email,
-        contact.phone,
+        contact.name || '--',
+        contact.email || '--',
+        contact.phone || '--',
         formatDate(
           new Date(parseInt(contact.createdAt)),
           'dd MMMM yyyy, HH:mm',
