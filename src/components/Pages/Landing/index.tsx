@@ -245,7 +245,7 @@ const Landing = () => {
                         validatePhone(phone.split(' ').join(''), 'nl-BE'),
                     })}
                   />
-                  <Form.PhoneInput
+                  <Form.Input
                     id="phone"
                     name="phone"
                     type="text"
