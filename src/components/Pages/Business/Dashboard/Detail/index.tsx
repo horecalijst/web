@@ -143,6 +143,8 @@ const BusinessDetail = () => {
               <a
                 key={`contact-export-${index}`}
                 href={`/api/business/${business.id}/export?date=${time}`}
+                target="_blank"
+                rel="noreferrer"
               >
                 export {format(date, 'd MMMM yyyy', { locale })}
                 <br />({contacts} {contacts === 1 ? 'contact' : 'contacten'})
