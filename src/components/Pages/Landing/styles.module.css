@@ -83,7 +83,7 @@
   }
 
   form {
-    @apply m-24 mt-12 mb-8;
+    @apply m-32 mt-12 mb-8;
     @apply relative;
 
     .formDisclaimer {
@@ -97,8 +97,8 @@
       @apply hidden;
     }
 
-    @media (max-width: 1024px) {
-      @apply mx-20;
+    @media (max-width: 1023px) {
+      @apply mx-24;
 
       .formDisclaimer {
         @apply hidden;
