@@ -1,6 +1,7 @@
 .header {
   @apply py-6 px-8;
   @apply flex items-center;
+  @apply flex-shrink-0;
 
   &.withBackground {
     @apply bg-gray-100;

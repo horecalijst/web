@@ -1,6 +1,7 @@
 .footer {
   @apply text-gray-500;
   @apply flex;
+  @apply flex-shrink-0;
 
   p {
     @apply py-6 px-8;

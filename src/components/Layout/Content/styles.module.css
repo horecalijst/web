@@ -2,7 +2,7 @@
   @apply mx-auto;
   @apply py-6 px-8;
   @apply w-full;
-  @apply flex-1;
+  flex: 1 0 auto;
   max-width: var(--container-width);
 
   &.fullWidth {
