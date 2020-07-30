@@ -20,10 +20,11 @@ const Contact = () => (
           <div>
             <strong className={styles.item}>Wouter De Schuyter</strong>
             <div className={styles.item}>
-              <FaEnvelope /> info@horecalijst.be
+              <FaEnvelope />{' '}
+              <a href="mailto:info@horecalijst.be">info@horecalijst.be</a>
             </div>
             <div className={styles.item}>
-              <FaPhoneAlt /> +32 479 22 82 10
+              <FaPhoneAlt /> <a href="tel:+32479228210">+32 479 22 82 10</a>
             </div>
           </div>
         </div>
