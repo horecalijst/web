@@ -8,7 +8,7 @@ const PrivacyDisclaimer = () => (
     <strong>veilig opgeslagen</strong> en worden enkel gedeeld met bevoegde
     autoriteiten in het kader van contactonderzoek.{' '}
     <strong>
-      Na 14 dagen worden jouw gegevens ook steeds definitief verwijderd.
+      Na 14 dagen worden jouw gegevens ook steeds definitief vernietigd.
     </strong>
   </div>
 );
