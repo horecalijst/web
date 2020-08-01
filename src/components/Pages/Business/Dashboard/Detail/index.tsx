@@ -146,7 +146,7 @@ const BusinessDetail = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                export {format(date, 'd MMMM yyyy', { locale })}
+                export {format(date, 'd MMM yyyy', { locale })}
                 <br />({contacts} {contacts === 1 ? 'contact' : 'contacten'})
               </a>
             );

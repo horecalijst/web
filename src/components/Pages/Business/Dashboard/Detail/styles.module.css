@@ -51,7 +51,7 @@
       @apply text-center;
       @apply inline-block;
       @apply w-full;
-      max-width: 165px;
+      max-width: 166px;
 
       @media (max-width: 480px) {
         @apply max-w-full w-auto;
