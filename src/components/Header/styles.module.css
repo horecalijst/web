@@ -49,6 +49,8 @@
   }
 
   nav {
+    @apply -m-1;
+
     a:first-child {
       @apply cursor-pointer;
       @apply font-semibold;
