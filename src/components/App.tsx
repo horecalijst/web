@@ -12,16 +12,6 @@ import Cookie, { Cookies } from 'services/cookie';
 import GoogleAnalytics from 'services/google-analytics';
 import Network from 'services/network';
 
-const ME = gql`
-  query {
-    me {
-      id
-      name
-      email
-    }
-  }
-`;
-
 interface Props {
   user: User | null;
 }
@@ -41,8 +31,22 @@ class App extends NextApp<Props> {
     }
 
     try {
-      const { data } = await Network.apollo.query({ query: ME });
-      user = data?.me || null;
+      const { data } = await Network.apollo.query({
+        query: gql`
+          query {
+            me {
+              id
+              name
+              email
+            }
+            refreshAuthToken
+          }
+        `,
+      });
+      const { refreshAuthToken, me } = data;
+      user = me || null;
+
+      Cookie.set(Cookies.JWT, refreshAuthToken, { ctx });
     } catch {
       return { ...appProps, user };
     }
