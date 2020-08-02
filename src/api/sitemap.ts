@@ -17,6 +17,7 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
   sitemap.write({ url: '/contact', priority: 0.8 });
   sitemap.write({ url: '/gebruiksvoorwaarden', priority: 0.5 });
   sitemap.write({ url: '/privacy', priority: 0.5 });
+  sitemap.write({ url: '/cookies', priority: 0.5 });
 
   sitemap.end();
 
