@@ -1,0 +1,31 @@
+.cookieBanner {
+  @apply py-4 px-8;
+  @apply flex items-center;
+  @apply flex-shrink-0;
+  @apply bg-indigo-500;
+  @apply text-sm text-indigo-100;
+
+  strong {
+    @apply mr-1;
+  }
+
+  .button {
+    @apply cursor-pointer;
+    @apply font-semibold;
+    @apply py-2 px-3;
+    @apply rounded;
+    @apply inline-flex;
+    @apply items-center;
+    @apply no-underline;
+    @apply text-indigo-100;
+    @apply bg-indigo-600;
+    @apply transition ease-in-out duration-150;
+    @apply leading-snug;
+    @apply ml-4 -my-1;
+    @apply whitespace-no-wrap;
+
+    &:hover {
+      @apply bg-indigo-700;
+    }
+  }
+}

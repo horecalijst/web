@@ -6,6 +6,7 @@ import UniversalCookie, {
 
 export enum Cookies {
   JWT = 'jwt',
+  ACKNOWLEDGE_COOKIES = 'acknowledge_cookies',
 }
 
 export type CookieGetOptions = _CookieGetOptions;
