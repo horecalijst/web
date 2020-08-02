@@ -11,15 +11,15 @@ const Contact = () => (
   <Layout>
     <Meta
       title="Contact"
-      description="Voor vragen of opmerkingen kan u zowel telefonish of via mail terecht bij onderstaande contactgegevens."
+      description="Voor vragen of opmerkingen kan u zowel telefonish als per mail terecht bij ons via onderstaande contactgegevens."
     />
     <Header />
     <Layout.Content>
       <div className={styles.contact}>
         <h2>Contact</h2>
         <p>
-          Voor vragen of opmerkingen kan u zowel telefonish of via mail terecht
-          bij onderstaande contactgegevens.
+          Voor vragen of opmerkingen kan u zowel telefonish als per mail terecht
+          bij ons via onderstaande contactgegevens.
         </p>
 
         <div className={styles.info}>
