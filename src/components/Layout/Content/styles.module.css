@@ -11,6 +11,6 @@
   }
 
   @media (max-width: 640px) {
-    @apply py-4 px-6;
+    @apply pt-4 px-6 pb-12;
   }
 }
