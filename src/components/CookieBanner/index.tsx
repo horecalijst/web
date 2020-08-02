@@ -1,4 +1,5 @@
 import { Cookies, useCookie } from 'hooks/useCookie';
+import Link from 'next/link';
 import React, { MouseEvent } from 'react';
 
 import styles from './styles.module.css';
@@ -22,15 +23,17 @@ const CookieBanner = () => {
         om de gebruikerservaring te verbeteren en voor analytische doeleinden.
         Door verder te surfen ga je akkoord met het gebruik van cookies.
       </p>
-      <button
-        className={styles.button}
-        onClick={(e: MouseEvent<HTMLButtonElement>) => {
-          e.preventDefault();
-          setAcknowledgeCookies('true', { maxAge });
-        }}
-      >
-        Ok
-      </button>
+      <Link href="/cookies">
+        <a
+          className={styles.button}
+          onClick={(e: MouseEvent<HTMLAnchorElement>) => {
+            e.preventDefault();
+            setAcknowledgeCookies('true', { maxAge });
+          }}
+        >
+          Ok
+        </a>
+      </Link>
     </div>
   );
 };
