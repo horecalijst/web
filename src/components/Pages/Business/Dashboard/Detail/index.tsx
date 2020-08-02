@@ -2,8 +2,9 @@ import { gql, useMutation, useQuery } from '@apollo/client';
 import cx from 'classnames';
 import Form from 'components/Form';
 import Twemoji from 'components/Twemoji';
-import { format } from 'date-fns';
+import { format, formatISO, parseISO } from 'date-fns';
 import { nl as locale } from 'date-fns/locale';
+import { Cookies, useCookie } from 'hooks/useCookie';
 import { useRouter } from 'next/router';
 import React, {
   ChangeEvent,
@@ -26,6 +27,7 @@ type Product = {
 const BusinessDetail = () => {
   const { query } = useRouter();
   const { id } = query;
+  const [jwt] = useCookie(Cookies.JWT);
   const { data: businessData } = useQuery(
     gql`
       query($id: String!) {
@@ -135,14 +137,18 @@ const BusinessDetail = () => {
       </h3>
       <h4>{business.address}</h4>
       <div className={styles.exportButtons}>
-        {Object.entries(business.numberOfContactsByDate).map(
-          ([time, contacts]: [string, any], index: number) => {
-            const date = new Date(parseInt(time));
+        {Object.entries<number>(business.numberOfContactsByDate).map(
+          ([time, contacts]: [string, number], index: number) => {
+            const date = parseISO(time);
 
             return (
               <a
                 key={`contact-export-${index}`}
-                href={`/api/business/${business.id}/export?date=${time}`}
+                href={`${process.env.NEXT_PUBLIC_API_URL}/businesses/${
+                  business.id
+                }/contacts/export?date=${formatISO(date, {
+                  representation: 'date',
+                })}&auth=${jwt}`}
                 target="_blank"
                 rel="noreferrer"
               >
