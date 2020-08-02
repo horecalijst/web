@@ -13,6 +13,9 @@ const Footer = () => (
       <Link href="/privacy">
         <a>Privacy</a>
       </Link>
+      <Link href="/cookies">
+        <a>Cookies</a>
+      </Link>
       <Link href="/contact">
         <a>Contact</a>
       </Link>
