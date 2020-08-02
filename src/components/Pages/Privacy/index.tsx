@@ -19,7 +19,10 @@ const Privacy = () => (
           We hechten veel belang aan privacy. Het beleid van Horecalijst stelt
           uw privacy voorop met betrekking tot alle persoonlijke gegevens die we
           verkrijgen via onze website,{' '}
-          <a href={process.env.APP_URL}>{process.env.APP_URL}</a>.
+          <a href={process.env.NEXT_PUBLIC_APP_URL}>
+            {process.env.NEXT_PUBLIC_APP_URL}
+          </a>
+          .
         </p>
         <p>
           We vragen enkel om persoonlijke informatie wanneer we deze
