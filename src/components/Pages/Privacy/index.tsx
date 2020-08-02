@@ -9,7 +9,10 @@ import styles from './styles.module.css';
 
 const Privacy = () => (
   <Layout>
-    <Meta title="Privacybeleid" />
+    <Meta
+      title="Privacybeleid"
+      description={`We hechten veel belang aan privacy. Het beleid van Horecalijst stelt uw privacy voorop met betrekking tot alle persoonlijke gegevens die we verkrijgen via onze website, ${process.env.NEXT_PUBLIC_APP_URL}.`}
+    />
     <Header />
     <Layout.Content>
       <div className={styles.privacy}>

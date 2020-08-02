@@ -60,7 +60,10 @@ const Business = () => {
 
   return (
     <Layout>
-      <Meta title="Zakelijk" />
+      <Meta
+        title="Zakelijk"
+        description="Meld u aan als horeca-uitbater en start in enkele minuten tijd! U kan gedurende 7 dagen gratis uitproberen, geen verplichtingen of stilzwijgende verlengingen."
+      />
       <Header withBackground={!!user} />
       <Layout.Content fullWidth={!!user}>
         <div className={styles.business}>

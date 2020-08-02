@@ -157,7 +157,7 @@ const Landing = () => {
     <Layout hideOverflow={!!contactId}>
       <Meta
         title="Horecalijst"
-        description="Op een veilige manier klantgegevens bijhouden gedurende 14 dagen, zonder al te veel gedoe? Dan ben je hier bij het juiste adres!"
+        description="Voor u als horeca-uitbater is het bijhouden van klantgegevens de nieuwste in een steeds langer wordende lijst van coronamaatregelen. Horecalijst neemt deze extra zorg graag van u over, zodat u optimaal kan focussen op uw zaak!"
       />
       <Header />
       <Layout.Content>

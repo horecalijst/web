@@ -8,7 +8,10 @@ import styles from './styles.module.css';
 
 const Terms = () => (
   <Layout>
-    <Meta title="Algemene voorwaarden" />
+    <Meta
+      title="Algemene voorwaarden"
+      description={`Door het gebruik van de website ${process.env.NEXT_PUBLIC_APP_URL}, bent u gebonden door deze gebruiksvoorwaarden, en gaat u akkoord met de toepasselijke wet- en regelgeving. U aanvaardt ook de verantwoordelijkheid voor het naleven van eventueel toepasbare lokale wetten.`}
+    />
     <Header />
     <Layout.Content>
       <div className={styles.terms}>

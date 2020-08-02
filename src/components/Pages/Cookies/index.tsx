@@ -8,7 +8,10 @@ import styles from './styles.module.css';
 
 const Cookies = () => (
   <Layout>
-    <Meta title="Cookiebeleid" />
+    <Meta
+      title="Cookiebeleid"
+      description="Met dit cookiebeleid informeert Horecalijst de gebruiker over het gebruik van cookies of vergelijkbare opslagtechnologiën (genaamd “cookies”) op deze website. Horecalijst gebruikt cookies om waar te nemen hoe haar website gebruikt wordt en om terugkerende bezoekers een persoonlijkere, snellere en meer doelmatigere toegang te bieden."
+    />
     <Header />
     <Layout.Content>
       <div className={styles.cookies}>

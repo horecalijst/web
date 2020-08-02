@@ -9,7 +9,10 @@ import styles from './styles.module.css';
 
 const Contact = () => (
   <Layout>
-    <Meta title="Contact" />
+    <Meta
+      title="Contact"
+      description="Voor vragen of opmerkingen kan u zowel telefonish of via mail terecht bij onderstaande contactgegevens."
+    />
     <Header />
     <Layout.Content>
       <div className={styles.contact}>
