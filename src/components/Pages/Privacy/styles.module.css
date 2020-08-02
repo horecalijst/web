@@ -28,11 +28,14 @@
 
   h2 + h3,
   p + h3,
-  p + p,
   ul + p,
   p + ul,
   ul + h3 {
     @apply mt-6;
+  }
+
+  p + p {
+    @apply mt-4;
   }
 
   ul {
