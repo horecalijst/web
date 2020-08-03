@@ -140,15 +140,19 @@ const BusinessDetail = () => {
         {Object.entries<number>(business.numberOfContactsByDate).map(
           ([time, contacts]: [string, number], index: number) => {
             const date = parseISO(time);
+            const ISODate = formatISO(date, {
+              representation: 'date',
+            });
+
+            const downloadUrl =
+              process.env.NODE_ENV === 'production'
+                ? `/zakelijk/${business.id}/export?date=${ISODate}`
+                : `${process.env.NEXT_PUBLIC_API_URL}/businesses/${business.id}/contacts/export?date=${ISODate}&auth=${jwt}`;
 
             return (
               <a
                 key={`contact-export-${index}`}
-                href={`${process.env.NEXT_PUBLIC_API_URL}/businesses/${
-                  business.id
-                }/contacts/export?date=${formatISO(date, {
-                  representation: 'date',
-                })}&auth=${jwt}`}
+                href={downloadUrl}
                 target="_blank"
                 rel="noreferrer"
               >
