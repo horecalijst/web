@@ -27,6 +27,7 @@
     @apply leading-snug;
     @apply ml-4 -my-1;
     @apply whitespace-no-wrap;
+    @apply flex-shrink-0;
 
     &:hover {
       @apply bg-indigo-700;
