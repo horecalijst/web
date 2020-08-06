@@ -143,6 +143,18 @@ const Landing = () => {
     }
   }, [dataAddContact?.addContact.id, didSubmitSuccesfully]);
 
+  useEffect(() => {
+    if (phone.length <= 1) {
+      return;
+    }
+
+    if (phone[0] === '+' || phone[0] === '0') {
+      return;
+    }
+
+    setPhone(`0${phone}`);
+  }, [phone]);
+
   const onCloseSuccess = () => {
     setDidSubmit(false);
     setEmail('');
