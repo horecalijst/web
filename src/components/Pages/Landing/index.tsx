@@ -234,7 +234,7 @@ const Landing = () => {
                   <Form.Input
                     id="phone"
                     name="phone"
-                    type="text"
+                    type="tel"
                     placeholder="Jouw GSM-nummer"
                     value={phone}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
