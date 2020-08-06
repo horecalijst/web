@@ -20,7 +20,7 @@ const CookieBanner = () => {
     <div className={styles.cookieBanner}>
       <p>
         <strong>Deze website maakt gebruik van cookies</strong>
-        om de gebruikerservaring te verbeteren en voor analytische doeleinden.
+        om de gebruikservaring te verbeteren en voor analytische doeleinden.
         Door verder te surfen ga je akkoord met het gebruik van cookies.
       </p>
       <Link href="/cookies">
