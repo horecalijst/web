@@ -199,6 +199,7 @@ const Landing = () => {
                   id="naam"
                   name="naam"
                   placeholder="Jouw naam"
+                  autoComplete="given-name"
                   onFocus={() => setEnableAutocomplete(false)}
                   value={name}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -220,6 +221,7 @@ const Landing = () => {
                     id="email"
                     name="email"
                     type="email"
+                    autoComplete="email"
                     placeholder="Jouw e-mailadres"
                     onFocus={() => setEnableAutocomplete(false)}
                     value={email}
@@ -247,6 +249,7 @@ const Landing = () => {
                     id="phone"
                     name="phone"
                     type="tel"
+                    autoComplete="tel"
                     placeholder="Jouw GSM-nummer"
                     value={phone}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -269,6 +272,7 @@ const Landing = () => {
                     id="business"
                     name="business"
                     type="text"
+                    autoComplete="off"
                     placeholder="Naam van aangesloten zaak"
                     value={business}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
