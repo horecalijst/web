@@ -46,7 +46,7 @@ const BusinessDetail = () => {
         }
       }
     `,
-    { variables: { id }, pollInterval: 5000 },
+    { variables: { id }, pollInterval: 5000, ssr: false },
   );
   const { data: productData, loading: productsLoading } = useQuery(
     gql`
