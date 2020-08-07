@@ -1,4 +1,5 @@
 import { gql, useMutation, useQuery } from '@apollo/client';
+import { useDidMount } from 'beautiful-react-hooks';
 import cx from 'classnames';
 import Form from 'components/Form';
 import Twemoji from 'components/Twemoji';
@@ -28,7 +29,7 @@ const BusinessDetail = () => {
   const { query } = useRouter();
   const { id } = query;
   const [jwt] = useCookie(Cookies.JWT);
-  const { data: businessData } = useQuery(
+  const { data: businessData, refetch } = useQuery(
     gql`
       query($id: String!) {
         business(id: $id) {
@@ -71,6 +72,8 @@ const BusinessDetail = () => {
   `);
   const [didSubmit, setDidSubmit] = useState(false);
   const [productId, setProductId] = useState('');
+
+  useDidMount(refetch);
 
   const onSubmit = useCallback(
     (e: FormEvent<HTMLFormElement>) => {

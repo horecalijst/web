@@ -1,4 +1,5 @@
 import { gql, useMutation, useQuery } from '@apollo/client';
+import { useDidMount } from 'beautiful-react-hooks';
 import cx from 'classnames';
 import Footer from 'components/Footer';
 import Form from 'components/Form';
@@ -40,7 +41,7 @@ const Landing = () => {
   const [hoveringOverAutocomplete, setHoveringOverAutocomplete] = useState(
     false,
   );
-  const { data: businessAutocompleteData } = useQuery(
+  const { data: businessAutocompleteData, refetch } = useQuery(
     gql`
       query businessAutocomplete($q: String!) {
         businessAutocomplete(q: $q) {
@@ -132,6 +133,8 @@ const Landing = () => {
     },
     [addContact, businessId, email, name, phone],
   );
+
+  useDidMount(refetch);
 
   useEffect(() => {
     setBusinessId('');
