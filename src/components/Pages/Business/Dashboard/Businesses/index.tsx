@@ -41,9 +41,7 @@ const Businesses = () => {
     return businessesData?.businesses || [];
   }, [businessesData]);
 
-  useDidMount(() => {
-    refetch();
-  });
+  useDidMount(refetch);
 
   return (
     <div className={styles.businesses}>
