@@ -28,6 +28,7 @@ body {
 
   strong {
     @apply font-semibold;
+    font-size: inherit;
   }
 
   #nprogress {
