@@ -22,7 +22,7 @@
   svg {
     @apply absolute;
     @apply pointer-events-none;
-    @apply text-gray-600;
+    @apply text-gray-500;
     top: 0.7em;
     right: 0.5em;
   }

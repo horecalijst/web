@@ -5,7 +5,7 @@ import React, {
   Ref,
   SelectHTMLAttributes,
 } from 'react';
-import { FaCaretDown } from 'react-icons/fa';
+import { FaAngleDown } from 'react-icons/fa';
 
 import styles from './styles.module.css';
 
@@ -28,7 +28,7 @@ const Select = (props: Props, ref: Ref<HTMLSelectElement>) => {
       })}
     >
       <select {...props} ref={ref} />
-      <FaCaretDown />
+      <FaAngleDown />
     </div>
   );
 };
