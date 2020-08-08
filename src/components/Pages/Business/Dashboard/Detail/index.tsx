@@ -29,7 +29,7 @@ const BusinessDetail = () => {
   const { query } = useRouter();
   const { id } = query;
   const [jwt] = useCookie(Cookies.JWT);
-  const { data: businessData, refetch } = useQuery(
+  const { data: businessData, refetch, stopPolling } = useQuery(
     gql`
       query($id: String!) {
         business(id: $id) {
@@ -115,6 +115,11 @@ const BusinessDetail = () => {
       }
     }
   }, [dataOrder]);
+
+  // graphql ssr infinite polling bug
+  if (typeof window === 'undefined') {
+    stopPolling();
+  }
 
   if (!business?.id) {
     return null;
