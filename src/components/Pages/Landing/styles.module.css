@@ -167,7 +167,7 @@
         }
 
         .address {
-          @apply text-gray-600 text-xs;
+          @apply text-gray-600 text-xs truncate;
         }
 
         &:hover {
