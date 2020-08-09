@@ -1,5 +1,5 @@
 import { gql, useMutation, useQuery } from '@apollo/client';
-import { useDidMount } from 'beautiful-react-hooks';
+import { useDidMount, usePreviousValue } from 'beautiful-react-hooks';
 import cx from 'classnames';
 import Footer from 'components/Footer';
 import Form from 'components/Form';
@@ -55,6 +55,7 @@ const Landing = () => {
       variables: { q: business },
     },
   );
+  const previousAutocomplete = usePreviousValue(businessAutocompleteData);
   const [
     addContact,
     { loading: addContactLoading, data: dataAddContact },
@@ -78,11 +79,18 @@ const Landing = () => {
 
   const businesses = useMemo(() => {
     if (businessAutocompleteData?.businessAutocomplete) {
-      return businessAutocompleteData?.businessAutocomplete || [];
+      return businessAutocompleteData?.businessAutocomplete;
+    }
+
+    if (previousAutocomplete?.businessAutocomplete) {
+      return previousAutocomplete?.businessAutocomplete;
     }
 
     return [];
-  }, [businessAutocompleteData]);
+  }, [
+    businessAutocompleteData?.businessAutocomplete,
+    previousAutocomplete?.businessAutocomplete,
+  ]);
 
   const businessOnClick = useCallback(
     (business: Business) => (e: MouseEvent<HTMLLIElement>) => {
