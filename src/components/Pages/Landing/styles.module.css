@@ -65,6 +65,7 @@
 
   h2 {
     font-family: 'Roboto Slab', serif;
+    @apply leading-normal;
     @apply font-medium;
     @apply text-3xl;
     @apply text-gray-700;
