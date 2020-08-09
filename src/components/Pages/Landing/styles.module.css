@@ -159,7 +159,11 @@
         z-index: 1;
 
         .title {
-          @apply text-sm font-semibold;
+          @apply text-sm font-semibold text-gray-700;
+
+          span {
+            @apply font-bold text-gray-800;
+          }
         }
 
         .address {

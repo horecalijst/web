@@ -306,19 +306,32 @@ const Landing = () => {
                     onMouseLeave={() => setHoveringOverAutocomplete(false)}
                   >
                     <ul>
-                      {businesses.map((business: Business, index: number) => {
-                        return (
-                          <li
-                            key={`business-${index}`}
-                            onClick={businessOnClick(business)}
-                          >
-                            <div className={styles.title}>{business.name}</div>
-                            <div className={styles.address}>
-                              {business.address}
-                            </div>
-                          </li>
-                        );
-                      })}
+                      {businesses.map(
+                        (businessItem: Business, index: number) => {
+                          const regex = new RegExp(business, 'ig');
+                          const matches = regex.exec(businessItem.name);
+                          const match = matches
+                            ? businessItem.name.replace(
+                                regex,
+                                `<span>${matches[0]}</span>`,
+                              )
+                            : businessItem.name;
+                          return (
+                            <li
+                              key={`business-${index}`}
+                              onClick={businessOnClick(businessItem)}
+                            >
+                              <div
+                                className={styles.title}
+                                dangerouslySetInnerHTML={{ __html: match }}
+                              />
+                              <div className={styles.address}>
+                                {businessItem.address}
+                              </div>
+                            </li>
+                          );
+                        },
+                      )}
                     </ul>
                   </div>
                 )}
